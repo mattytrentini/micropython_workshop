@@ -5,6 +5,7 @@ Now let's try the same, but not with the build-in LED -- let's connect an
 external LED and try to use that. The connection should look like this:
 
 .. image:: ./images/blink.png
+    :width: 512px
 
 Note how one leg of the LED is a little bit longer, and the other had a
 flattening on the plastic of the LED next to it. The long leg should go to the
