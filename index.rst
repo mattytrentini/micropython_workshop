@@ -15,6 +15,7 @@ Contents:
    board.rst
    connecting.rst
    blink.rst
+   external.rst
 
 
 Indices and tables
