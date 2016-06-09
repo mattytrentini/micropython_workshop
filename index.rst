@@ -11,13 +11,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   prerequisites.rst
-   board.rst
-   connecting.rst
-   blink.rst
-   external.rst
-   pwm.rst
-   servo.rst
+   setup.rst
+   basics.rst
 
 
 Indices and tables
