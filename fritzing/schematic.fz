@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.9.3b.04.19.5c895d327c44a3114e5fcc9d8260daf0cbb52806" icon=".png">
+    <boards>
+        <board moduleId="TwoLayerRectanglePCBModuleID" title="Rectangular PCB - Resizable" instance="PCB1" width="5cm" height="5cm"/>
+    </boards>
+    <views>
+        <view name="breadboardView" backgroundColor="#ffffff" gridSize="0.1in" showGrid="1" alignToGrid="1" viewFromBelow="0"/>
+        <view name="schematicView" backgroundColor="#ffffff" gridSize="0.1in" showGrid="1" alignToGrid="1" viewFromBelow="0"/>
+        <view name="pcbView" backgroundColor="#333333" gridSize="0.025in" showGrid="1" alignToGrid="1" viewFromBelow="0" autorouteViaHoleSize="" autorouteTraceWidth="24" DRC_Keepout="" autorouteViaRingThickness="" GPG_Keepout=""/>
+    </views>
+    <instances>
+        <instance moduleIdRef="TwoLayerRectanglePCBModuleID" modelIndex="5736" path=":/resources/parts/core/rectangle_pcb_two_layers.fzp">
+            <property name="layers" value="2"/>
+            <property name="width" value="50"/>
+            <property name="height" value="50"/>
+            <title>PCB1</title>
+            <views>
+                <breadboardView layer="icon">
+                    <geometry z="0.5001" x="0" y="0"/>
+                </breadboardView>
+                <pcbView layer="board">
+                    <geometry z="1.5001" x="0.052118" y="0"/>
+                </pcbView>
+                <schematicView layer="icon">
+                    <geometry z="0.5001" x="0" y="0"/>
+                </schematicView>
+            </views>
+        </instance>
+        <instance moduleIdRef="ResistorModuleID" modelIndex="5902" path="/home/sheep/Stuff/Fritzing/fritzing-parts/core/resistor.fzp">
+            <property name="tolerance" value="±5%"/>
+            <property name="resistance" value="0"/>
+            <property name="pin spacing" value="400 mil"/>
+            <title>resistor</title>
+            <views>
+                <schematicView layer="schematic">
+                    <geometry z="3.00011" x="-288.438" y="-264.87"/>
+                    <titleGeometry visible="true" x="-251.563" y="-278.87" z="7.00011" xOffset="36.875" yOffset="-14" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                        <displayKey key="part number"/>
+                        <displayKey key="power"/>
+                        <displayKey key="resistance"/>
+                    </titleGeometry>
+                </schematicView>
+                <breadboardView layer="breadboard">
+                    <geometry z="3.00011" x="349.684" y="22.4595"/>
+                    <connectors>
+                        <connector connectorId="connector1" layer="breadboard">
+                            <geometry x="36.0063" y="4.5405"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="1.3095" y="0"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                        <connector connectorId="connector0" layer="breadboard">
+                            <geometry x="2.619" y="4.5405"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="-1.3095" y="0"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                    </connectors>
+                </breadboardView>
+                <pcbView layer="copper0">
+                    <geometry z="6.00011" x="1.125" y="0.63"/>
+                    <titleGeometry visible="true" x="43.875" y="-6.37" z="13.0001" xOffset="42.75" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                    </titleGeometry>
+                </pcbView>
+            </views>
+        </instance>
+        <instance moduleIdRef="100milCeramicCapacitorModuleID" modelIndex="5905" path="/home/sheep/Stuff/Fritzing/fritzing-parts/core/capacitor_ceramic_100mil.fzp">
+            <property name="capacitance" value="100nF"/>
+            <title>capacitor</title>
+            <views>
+                <schematicView layer="schematic">
+                    <geometry z="3.00012" x="-196.2" y="-270.438"/>
+                    <titleGeometry visible="true" x="-181.8" y="-284.438" z="7.00012" xOffset="14.4" yOffset="-14" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                        <displayKey key="part number"/>
+                        <displayKey key="capacitance"/>
+                        <displayKey key="voltage"/>
+                    </titleGeometry>
+                </schematicView>
+                <breadboardView layer="breadboard">
+                    <geometry z="3.00011" x="266.01" y="-31.3443"/>
+                    <connectors>
+                        <connector connectorId="connector1" layer="breadboard">
+                            <geometry x="12.9897" y="22.3443"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="0" y="18"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                        <connector connectorId="connector0" layer="breadboard">
+                            <geometry x="3.969" y="22.3443"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="0" y="18"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                    </connectors>
+                </breadboardView>
+                <pcbView layer="copper0">
+                    <geometry z="6.00012" x="54.9" y="0.883334">
+                        <transform m11="0" m12="1" m13="0" m21="-1" m22="0" m23="0" m31="11.7" m32="-4.5" m33="1"/>
+                    </geometry>
+                    <titleGeometry visible="true" x="71.1" y="-6.11667" z="13.0001" xOffset="16.2" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                    </titleGeometry>
+                </pcbView>
+            </views>
+        </instance>
+        <instance moduleIdRef="SmallElectrolyticCapacitorModuleID" modelIndex="5908" path="/home/sheep/Stuff/Fritzing/fritzing-parts/core/capacitor_electrolytic_small.fzp">
+            <property name="capacitance" value="1µF"/>
+            <title>electrolythic capacitor</title>
+            <views>
+                <schematicView layer="schematic">
+                    <geometry z="3.00013" x="-144.45" y="-270.438"/>
+                    <titleGeometry visible="true" x="-125.55" y="-284.438" z="7.00013" xOffset="18.9" yOffset="-14" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                        <displayKey key="part number"/>
+                        <displayKey key="capacitance"/>
+                        <displayKey key="voltage"/>
+                    </titleGeometry>
+                </schematicView>
+                <breadboardView layer="breadboard">
+                    <geometry z="3.00012" x="373.599" y="-56.0394"/>
+                    <connectors>
+                        <connector connectorId="connector1" layer="breadboard">
+                            <geometry x="13.401" y="43.4394"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="0" y="12.6"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                        <connector connectorId="connector0" layer="breadboard">
+                            <geometry x="4.401" y="43.4394"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="0" y="12.6"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                    </connectors>
+                </breadboardView>
+                <pcbView layer="copper0">
+                    <geometry z="6.00013" x="-0.45" y="17.55"/>
+                    <titleGeometry visible="true" x="18.45" y="10.55" z="13.0001" xOffset="18.9" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                    </titleGeometry>
+                </pcbView>
+            </views>
+        </instance>
+        <instance moduleIdRef="56bed03878064b8286b71d5240035138InductorModuleID" modelIndex="5911" path="/home/sheep/Stuff/Fritzing/fritzing-parts/core/inductor.fzp">
+            <title>coil</title>
+            <views>
+                <schematicView layer="schematic">
+                    <geometry z="3.00014" x="-279.45" y="-216.438"/>
+                    <titleGeometry visible="true" x="-274.05" y="-223.438" z="7.00014" xOffset="5.4" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                        <displayKey key="part number"/>
+                        <displayKey key="inductance"/>
+                        <displayKey key="current"/>
+                    </titleGeometry>
+                </schematicView>
+                <breadboardView layer="breadboard">
+                    <geometry z="3.00013" x="260.014" y="-1.18"/>
+                    <connectors>
+                        <connector connectorId="connector1" layer="breadboard">
+                            <geometry x="33.1675" y="10.18"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="3.81875" y="0"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                        <connector connectorId="connector0" layer="breadboard">
+                            <geometry x="2.5625" y="10.1612"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="-1" y="0"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                    </connectors>
+                </breadboardView>
+                <pcbView layer="copper0">
+                    <geometry z="6.00014" x="27.9" y="18.9">
+                        <transform m11="0" m12="1" m13="0" m21="-1" m22="0" m23="0" m31="25.2" m32="-18" m33="1"/>
+                    </geometry>
+                    <titleGeometry visible="true" x="71.1" y="11.9" z="13.0001" xOffset="43.2" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                    </titleGeometry>
+                </pcbView>
+            </views>
+        </instance>
+        <instance moduleIdRef="3254CBFC44diode" modelIndex="5914" path="/home/sheep/Stuff/Fritzing/fritzing-parts/core/diode_1N4001_300mil.fzp">
+            <property name="part number" value=""/>
+            <title>diode</title>
+            <views>
+                <schematicView layer="schematic">
+                    <geometry z="3.00015" x="-248.236" y="-189.346"/>
+                    <titleGeometry visible="true" x="-237.767" y="-203.346" z="7.00015" xOffset="10.4687" yOffset="-14" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                        <displayKey key="part number"/>
+                    </titleGeometry>
+                </schematicView>
+                <breadboardView layer="breadboard">
+                    <geometry z="3.00014" x="287.96" y="22.4625"/>
+                    <connectors>
+                        <connector connectorId="connector1" layer="breadboard">
+                            <geometry x="34.7312" y="4.5375"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="1.30875" y="0"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                        <connector connectorId="connector0" layer="breadboard">
+                            <geometry x="2.6175" y="4.5375"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="-1.30875" y="0"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                    </connectors>
+                </breadboardView>
+                <pcbView layer="copper0">
+                    <geometry z="6.00015" x="63.9" y="22.5"/>
+                    <titleGeometry visible="true" x="98.28" y="15.5" z="13.0001" xOffset="34.38" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                    </titleGeometry>
+                </pcbView>
+            </views>
+        </instance>
+        <instance moduleIdRef="20A9BBEE34_ST-2leadbutton-horizon" modelIndex="5917" path="/home/sheep/Stuff/Fritzing/fritzing-parts/core/pushbutton_2_horizontal.fzp">
+            <title>switch</title>
+            <views>
+                <schematicView layer="schematic">
+                    <geometry z="3.00016" x="-95.9263" y="-243.417"/>
+                    <titleGeometry visible="true" x="-87.6562" y="-250.417" z="7.00016" xOffset="8.27" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                        <displayKey key="part number"/>
+                    </titleGeometry>
+                </schematicView>
+                <breadboardView layer="breadboard">
+                    <geometry z="3.00015" x="349.691" y="13.4594"/>
+                </breadboardView>
+                <pcbView layer="copper0">
+                    <geometry z="6.00016" x="76.86" y="0.36"/>
+                    <titleGeometry visible="true" x="112.14" y="-6.64" z="13.0002" xOffset="35.28" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                    </titleGeometry>
+                </pcbView>
+            </views>
+        </instance>
+        <instance moduleIdRef="3234DBDC00PotentiometerModuleID" modelIndex="5926" path="/home/sheep/Stuff/Fritzing/fritzing-parts/core/pot_trimmer_12mm.fzp">
+            <property name="maximum resistance" value="10kΩ"/>
+            <title>potentiometer</title>
+            <views>
+                <schematicView layer="schematic">
+                    <geometry z="3.00019" x="-207" y="-216"/>
+                    <titleGeometry visible="true" x="-171" y="-230" z="7.00019" xOffset="36" yOffset="-14" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                        <displayKey key="part number"/>
+                        <displayKey key="power"/>
+                        <displayKey key="maximum resistance"/>
+                    </titleGeometry>
+                </schematicView>
+                <breadboardView layer="breadboard">
+                    <geometry z="3.00018" x="411.876" y="7.65"/>
+                </breadboardView>
+                <pcbView layer="copper0">
+                    <geometry z="6.00019" x="0.09" y="55.17">
+                        <transform m11="0" m12="1" m13="0" m21="-1" m22="0" m23="0" m31="41.49" m32="-3.33" m33="1"/>
+                    </geometry>
+                    <titleGeometry visible="true" x="44.91" y="48.17" z="13.0002" xOffset="44.82" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                    </titleGeometry>
+                </pcbView>
+            </views>
+        </instance>
+        <instance moduleIdRef="2244EBEC21e" modelIndex="5929" path="/home/sheep/Stuff/Fritzing/fritzing-parts/core/transistor_signal_PNP_TO92_EBC.fzp">
+            <title>PNP transistor</title>
+            <views>
+                <schematicView layer="schematic">
+                    <geometry z="3.0002" x="-270.438" y="-144.438"/>
+                    <titleGeometry visible="true" x="-251.563" y="-151.438" z="7.0002" xOffset="18.875" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                        <displayKey key="part number"/>
+                    </titleGeometry>
+                </schematicView>
+                <breadboardView layer="breadboard">
+                    <geometry z="3.00019" x="268.691" y="59.9314"/>
+                    <connectors>
+                        <connector connectorId="connector2" layer="breadboard">
+                            <geometry x="19.3086" y="30.096"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="0" y="8.97256"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                        <connector connectorId="connector1" layer="breadboard">
+                            <geometry x="10.3262" y="30.096"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="0" y="8.97256"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                        <connector connectorId="connector0" layer="breadboard">
+                            <geometry x="1.34999" y="30.096"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="0" y="8.97256"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                    </connectors>
+                </breadboardView>
+                <pcbView layer="copper0">
+                    <geometry z="6.0002" x="63" y="41.49"/>
+                    <titleGeometry visible="true" x="88.65" y="34.49" z="13.0002" xOffset="25.65" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                    </titleGeometry>
+                </pcbView>
+            </views>
+        </instance>
+        <instance moduleIdRef="NPN-to92-ebc" modelIndex="5932" path="/home/sheep/Stuff/Fritzing/fritzing-parts/core/transistor_signal_NPN_TO92_EBC.fzp">
+            <title>NPN transitor</title>
+            <views>
+                <schematicView layer="schematic">
+                    <geometry z="3.00021" x="-198.438" y="-144.438"/>
+                    <titleGeometry visible="true" x="-179.563" y="-151.438" z="7.00021" xOffset="18.875" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                        <displayKey key="part number"/>
+                    </titleGeometry>
+                </schematicView>
+                <breadboardView layer="breadboard">
+                    <geometry z="3.0002" x="340.691" y="68.9263"/>
+                    <connectors>
+                        <connector connectorId="connector2" layer="breadboard">
+                            <geometry x="19.3086" y="30.1012"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="0" y="8.9725"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                        <connector connectorId="connector1" layer="breadboard">
+                            <geometry x="10.3262" y="30.1012"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="0" y="8.9725"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                        <connector connectorId="connector0" layer="breadboard">
+                            <geometry x="1.34999" y="30.1012"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="0" y="8.9725"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                    </connectors>
+                </breadboardView>
+                <pcbView layer="copper0">
+                    <geometry z="6.00021" x="108" y="18.99"/>
+                    <titleGeometry visible="true" x="133.65" y="11.99" z="13.0002" xOffset="25.65" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                    </titleGeometry>
+                </pcbView>
+            </views>
+        </instance>
+        <instance moduleIdRef="1001ABDC27" modelIndex="5940" path="/home/sheep/Stuff/Fritzing/fritzing-parts/core/basic_fet_p.fzp">
+            <title>MOSFET transitor</title>
+            <views>
+                <pcbView layer="copper0">
+                    <geometry z="6.00022" x="51.7932" y="-16.4379">
+                        <transform m11="0" m12="1" m13="0" m21="-1" m22="0" m23="0" m31="32.4" m32="-7.2" m33="1"/>
+                    </geometry>
+                    <titleGeometry visible="true" x="91.3932" y="-23.4379" z="13.0002" xOffset="39.6" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                    </titleGeometry>
+                </pcbView>
+                <breadboardView layer="breadboard">
+                    <geometry z="3.00021" x="395.562" y="67.3092"/>
+                    <connectors>
+                        <connector connectorId="connector2" layer="breadboard">
+                            <geometry x="26.0973" y="56.0853"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="0" y="9"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                        <connector connectorId="connector1" layer="breadboard">
+                            <geometry x="17.0991" y="56.0853"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="0" y="9"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                        <connector connectorId="connector0" layer="breadboard">
+                            <geometry x="8.1009" y="56.0853"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="0" y="9"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                    </connectors>
+                </breadboardView>
+                <schematicView layer="schematic">
+                    <geometry z="3.00022" x="-144.438" y="-144.438"/>
+                    <titleGeometry visible="true" x="-104.58" y="-151.438" z="7.00024" xOffset="39.8575" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                        <displayKey key="part number"/>
+                    </titleGeometry>
+                </schematicView>
+            </views>
+        </instance>
+        <instance moduleIdRef="DC2PowerModuleID" modelIndex="5949" path="/home/sheep/Stuff/Fritzing/fritzing-parts/core/dcpower2.fzp">
+            <property name="voltage" value="3.3V"/>
+            <property name="frequency" value="60"/>
+            <title>battery</title>
+            <views>
+                <pcbView layer="schematic">
+                    <geometry z="3.00024" x="2.16827" y="-164.985"/>
+                </pcbView>
+                <breadboardView layer="schematic">
+                    <geometry z="3.00024" x="345.937" y="-81.2379"/>
+                </breadboardView>
+                <schematicView layer="schematic">
+                    <geometry z="3.00024" x="-257.062" y="-247.985"/>
+                    <titleGeometry visible="true" x="-228.938" y="-261.985" z="7.00027" xOffset="28.125" yOffset="-14" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                        <displayKey key="part number"/>
+                        <displayKey key="voltage"/>
+                    </titleGeometry>
+                </schematicView>
+            </views>
+        </instance>
+        <instance moduleIdRef="WireModuleID" modelIndex="5951" path=":/resources/parts/core/wire.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="1238DBDC00-toggle-switch" modelIndex="5953" path="/home/sheep/Stuff/Fritzing/fritzing-parts/core/basic-toggle-switch.fzp">
+            <title>toggle switch</title>
+            <views>
+                <schematicView layer="schematic">
+                    <geometry z="3.00025" x="-126.438" y="-181.633"/>
+                    <titleGeometry visible="true" x="-98.5627" y="-188.633" z="7.00028" xOffset="27.875" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                        <displayKey key="part number"/>
+                    </titleGeometry>
+                </schematicView>
+                <breadboardView layer="breadboard">
+                    <geometry z="3.00022" x="416.439" y="12.6643"/>
+                </breadboardView>
+                <pcbView layer="copper0">
+                    <geometry z="6.00023" x="0.45" y="106.2">
+                        <transform m11="0" m12="1" m13="0" m21="-1" m22="0" m23="0" m31="21.6" m32="9" m33="1"/>
+                    </geometry>
+                    <titleGeometry visible="true" x="13.05" y="99.2" z="13.0002" xOffset="12.6" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                    </titleGeometry>
+                </pcbView>
+            </views>
+        </instance>
+        <instance moduleIdRef="CrystalModuleID" modelIndex="5966" path="/home/sheep/Stuff/Fritzing/fritzing-parts/core/crystal.fzp">
+            <property name="frequency" value="16 Mhz"/>
+            <title>crystal</title>
+            <views>
+                <pcbView layer="copper0">
+                    <geometry z="6.00025" x="60.9145" y="-72.1246"/>
+                    <titleGeometry visible="true" x="99.8909" y="-79.1246" z="13.0003" xOffset="38.9764" yOffset="-7" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                    </titleGeometry>
+                </pcbView>
+                <breadboardView layer="breadboard">
+                    <geometry z="3.00024" x="404.683" y="11.6225"/>
+                    <connectors>
+                        <connector connectorId="connector1" layer="breadboard">
+                            <geometry x="26.5508" y="12.2644"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="0" y="3.93564"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                        <connector connectorId="connector0" layer="breadboard">
+                            <geometry x="8.60005" y="12.2644"/>
+                            <leg>
+                                <point x="0" y="0"/>
+                                <bezier/>
+                                <point x="0" y="3.93564"/>
+                                <bezier/>
+                            </leg>
+                        </connector>
+                    </connectors>
+                </breadboardView>
+                <schematicView layer="schematic">
+                    <geometry z="3.00027" x="-144.316" y="-204.74"/>
+                    <titleGeometry visible="true" x="-125.441" y="-218.74" z="7.00033" xOffset="18.875" yOffset="-14" textColor="#000000" fontSize="5">
+                        <displayKey key=""/>
+                        <displayKey key="part number"/>
+                        <displayKey key="frequency"/>
+                    </titleGeometry>
+                </schematicView>
+            </views>
+        </instance>
+    </instances>
+</module>

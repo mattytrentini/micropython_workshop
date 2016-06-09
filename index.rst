@@ -13,6 +13,7 @@ Contents:
 
    setup.rst
    basics.rst
+   advanced.rst
 
 
 Indices and tables
