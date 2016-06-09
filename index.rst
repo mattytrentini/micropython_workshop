@@ -17,6 +17,7 @@ Contents:
    blink.rst
    external.rst
    pwm.rst
+   servo.rst
 
 
 Indices and tables

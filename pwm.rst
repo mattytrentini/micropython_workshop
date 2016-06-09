@@ -33,7 +33,7 @@ called PWM (for Pulse Width Modulation), and you can use it like this::
     pwm.duty(0)
 
 If you run this, you should see the blue led on ``gpio2`` change brightness.
-The possible range is from 1024 (100% duty cycle, the LED is off) to 0 (0%
+The possible range is from 1023 (100% duty cycle, the LED is off) to 0 (0%
 duty cycle, the LED is on full brightness). Why is 0 full brightness? Remember,
 that the LED on the ``gpio2`` is reversed -- it shines when the pin is off,
 and the duty cycle tells how much the pin is on.
