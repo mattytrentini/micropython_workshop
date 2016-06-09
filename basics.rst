@@ -228,3 +228,28 @@ There also exist "continuous rotation" servos, which don't move to the
 specified position, but instead rotate with specified speed. Those are suitable
 for building simple wheeled robots. It's possible to modify a normal servo into
 a continuous rotation servo.
+
+
+Beepers
+=======
+
+When I wrote that PWM has a frequency, did you immediately think about sound?
+Yes, electric signals can be similar to sound, and we can turn them into sound
+by using speakers. Or small piezoelectric beepers, like in our case.
+
+.. image:: ./images/beeper.png
+
+The piezoelectric speaker doesn't use any external source of power -- it will
+be powered directly from the GPIO pin -- that's why it can be pretty quiet.
+Still, let's try it::
+
+    from machine import Pin, PWM
+    import time
+
+    beeper = PWM(Pin(14), freq=440, duty=512)
+    time.sleep(0.5)
+    beeper.deinit()
+
+Unfortunately, we can't really play any melodies, as the possible frequencies
+currently don't cover the musical notes. We can make noises, and that's pretty
+much it.  We can play music and other sounds, but not with the PWM.

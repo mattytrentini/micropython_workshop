@@ -98,6 +98,8 @@ Simply open a terminal and run the following command::
 
     screen /dev/ttyUSB0 115200
 
+To exit screen, press ctrl+A and then capital K.
+
 
 Windows
 -------
