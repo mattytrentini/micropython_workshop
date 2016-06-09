@@ -16,6 +16,7 @@ Contents:
    connecting.rst
    blink.rst
    external.rst
+   pwm.rst
 
 
 Indices and tables
