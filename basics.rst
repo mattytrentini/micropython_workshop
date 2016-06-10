@@ -253,3 +253,46 @@ Still, let's try it::
 Unfortunately, we can't really play any melodies, as the possible frequencies
 currently don't cover the musical notes. We can make noises, and that's pretty
 much it.  We can play music and other sounds, but not with the PWM.
+
+
+Network
+=======
+
+The ESP8266 has wireless networking support. It can act as a WiFi access point
+to which you can connect, and it can also connect to the Internet.
+
+To configure it as an access point, run code like this (use your own name and password)::
+
+    import network
+    ap = network.WLAN(network.AP_IF)
+    ap.active(True)
+    ap.config(essid="network-name", authmode=network.AUTH_WPA_WPA2_PSK, password="abcdabcdabcd")
+
+To scan for available networks (and also get additional information about their
+signal strength and details), use::
+
+    import network
+    sta = network.WLAN(network.STA_IF)
+    sta.active(True)
+    print(sta.scan())
+
+To connect to an existing network, use::
+
+    import network
+    sta = network.WLAN(network.STA_IF)
+    sta.active(True)
+    sta.connect("network-name", "password")
+
+Once the board connects to a network, it will remember it and reconnect every
+time. To get details about connection, use::
+
+    sta.ifconfig()
+    sta.status()
+    sta.isconnected()
+
+
+HTTP Requests
+=============
+
+Once you are connected to network, you can talk to servers and interact with
+web services.
