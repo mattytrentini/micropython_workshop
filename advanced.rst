@@ -16,6 +16,7 @@ are arranged. Instead they use simple symbols. For instance, here's a schematic
 of our experiment with the external LED:
 
 .. image:: ./images/blink_schem.png
+    :width: 512px
 
 The resistor is symbolized by a zig-zag. The LED is marked by a diode symbol
 (a triangle with a bar), with additional two arrows showing that it's a light
@@ -29,6 +30,7 @@ all those wires, it's easier to simply use that symbol.
 Here are some more symbols:
 
 .. image:: ./images/schematic.png
+    :width: 512px
 
 It's important to learn to read and draw electric schematics, because anything
 more advanced is going to use them, and you will also need them when asking for
