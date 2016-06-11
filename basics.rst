@@ -357,6 +357,23 @@ Please note that since the board doesn't have much memory, you can put large
 files on it.
 
 
+Uploading Files
+===============
+
+You can use the WebREPL to upload files to the board from your computer. To do
+that, you need to open a terminal in the directory where you unpacked the
+WebREPL files, and run the command:
+
+.. highlight:: bash
+    python webrepl_cli.py yourfile.xxx XXX.XXX.XXX.XXX:
+
+Where ``yourfile.xxx`` is the file you want to send, and ``XXX.XXX.XXX.XXX`` is
+the address of your board.
+
+.. note::
+    You have to have Python installed on your computer for this to work.
+
+
 HTTP Requests
 =============
 
