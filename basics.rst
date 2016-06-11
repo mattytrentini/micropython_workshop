@@ -291,6 +291,72 @@ time. To get details about connection, use::
     sta.isconnected()
 
 
+WebREPL
+=======
+
+The command console in which you are typing all the code is called "REPL" --
+an acronym of "read-evaluate-print-loop". It works over a serial connection
+over USB. However, once you have your board connected to network, you can
+use the command console in your browser, over network. That is called WebREPL.
+
+First, you will need to download the web page for the WebREPL to your computer.
+Get the file from https://github.com/micropython/webrepl/archive/master.zip and
+unpack it somewhere on your computer, then click on the ``webrepl.html`` file
+to open it in the browser.
+
+In order to connect to your board, you have to know its address. If the board
+works in accesspoint mode, it uses the default address. If it's connected to
+WiFi, you can check it with this code::
+
+    import network
+    sta = network.WLAN(network.STA_IF)
+    print(sta.ifconfig())
+
+You will see something like ``XXX.XXX.XXX.XXX`` -- that's the IP address. Enter
+it in the WebREPL's address box at the top like this
+``ws://XXX.XXX.XXX.XXX:8266/``.
+
+To connect to your board, you first have to start the server on it. You do it
+with this code::
+
+    import webrepl
+    webrepl.start()
+
+Now you can go back to the browser and click "connect".  On the first
+connection, you will be asked to setup a password -- later you will use that
+password to connect to your board.
+
+
+Filesystem
+==========
+
+Writing in the console is all fine for experimenting, but when you actually
+build something, you want the code to stay on the board, so that you don't have
+to connect to it and type the code every time. For that purpose, there is a
+file storage on your board, where you can put your code and store data.
+
+You can see the list of files in that storage with this code::
+
+    import os
+    print(os.listdir())
+
+You should see something like ``['boot.py']`` -- that's a list with just one
+file name in it. ``boot.py`` and later ``main.py`` are two special files that
+are executed when the board starts. ``boot.py`` is for configuration, and you
+can put your own code in ``main.py``.
+
+You can create, write to and read from files like you would with normal Python::
+
+    with open("myfile.txt", "w") as f:
+        f.write("Hello world!")
+    print(os.listdir())
+    with open("myfile.txt", "r") as f:
+        print(f.read())
+
+Please note that since the board doesn't have much memory, you can put large
+files on it.
+
+
 HTTP Requests
 =============
 
