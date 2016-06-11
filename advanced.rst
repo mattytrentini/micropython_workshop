@@ -69,8 +69,9 @@ And the code for driving them is not very complex either, because the library
 for generating the signal is included in Micropython::
 
     import neopixel
-    pixels = neopixel.Neopixel(Pin(14, Pin.OUT))
+    pixels = neopixel.Neopixel(Pin(14, Pin.OUT), 8)
     pixels[0] = (0xff, 0x00, 0x00)
     pixels.write()
 
-You can create all sorts of animations, rainbows and pretty effects with those.
+Where ``8`` is the number of LEDs in a chain.  You can create all sorts of
+animations, rainbows and pretty effects with those.
