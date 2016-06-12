@@ -238,6 +238,7 @@ Yes, electric signals can be similar to sound, and we can turn them into sound
 by using speakers. Or small piezoelectric beepers, like in our case.
 
 .. image:: ./images/beeper.png
+    :width: 512px
 
 The piezoelectric speaker doesn't use any external source of power -- it will
 be powered directly from the GPIO pin -- that's why it can be pretty quiet.

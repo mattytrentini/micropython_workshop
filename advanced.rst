@@ -68,6 +68,7 @@ of the LEDs in a string (or matrix, or ring). The connection is simple:
 And the code for driving them is not very complex either, because the library
 for generating the signal is included in Micropython::
 
+    form machine import Pin
     import neopixel
     pixels = neopixel.Neopixel(Pin(14, Pin.OUT), 8)
     pixels[0] = (0xff, 0x00, 0x00)
@@ -75,3 +76,22 @@ for generating the signal is included in Micropython::
 
 Where ``8`` is the number of LEDs in a chain.  You can create all sorts of
 animations, rainbows and pretty effects with those.
+
+
+Temperature and Humidity
+========================
+
+The DHT11 and DHT22 sensors are quite popular for all sorts of weather
+stations. They use a single-wire protocol for communication. Micropython on
+ESP9266 has that covered::
+
+    from machine import Pin
+    import dht
+    sensor = dht.DHT11(Pin(2))
+    sensor.measure()
+    print(sensor.temperature())
+    print(sensor.humidity())
+
+The connections are simple:
+
+.. image:: ./images/dht11.png
