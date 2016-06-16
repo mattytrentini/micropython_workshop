@@ -172,6 +172,65 @@ background" controlled by dedicated hardware, while your program can do other
 things!
 
 
+Buttons
+=======
+
+We don't have a button in our kit, but we can simulate one by just using two
+wires, one with a male plug, and one with female. Connect them like so:
+
+.. image:: ./images/button.png
+    :width: 512px
+
+Now we will write some code that will switch the LED on and off each time the
+wires are put together::
+
+    from machine import Pin
+    led = Pin(2, Pin.OUT)
+    button = Pin(14, Pin.IN, Pin.PULL_UP)
+    while True:
+        if not button.value():
+            led.value(not led.value())
+            while button.value():
+                pass
+
+We have used ``Pin.IN`` because we want to use ``gpio14`` as an input pin, on
+which we will read the voltage. We also added ``Pin.PULL_UP`` -- that means
+that there is a special internal resistor enabled between that pin and the
+``3V3`` pins. The effect of this is that when the pin is not connected to
+anything (we say it's "floating"), it will return 1. If we didn't do that, it
+would return random values depending on its environment. Of course when you
+connect the pin to ``GND``, it will return 0.
+
+However, when you try this example, you will see that it doesn't work reliably.
+The LED will blink, and sometimes stay off, sometimes switch on again,
+randomly. Why is that?
+
+That's because your hands are shaking. A mechanical switch has a spring inside
+that would shake and vibrate too. That means that each time you touch the wires
+(or close the switch), there are in reality multiple signals sent, not just
+one. This is called "bouncing", because the signal bounces several times.
+
+To fix this issue, we will do something that is called "de-bouncing". There are
+several ways to do it, but the easiest is to just wait some time for the signal
+to stabilize::
+
+
+    import time
+    from machine import Pin
+    led = Pin(2, Pin.OUT)
+    button = Pin(14, Pin.IN, Pin.PULL_UP)
+    while True:
+        if not button.value():
+            led.value(not led.value())
+            time.sleep_ms(300)
+            while button.value():
+                pass
+
+Here we wait 3/10 of a second -- too fast for a human to notice, but enough for
+the signal to stabilize. The exact time for this is usually determined
+experimentally, or by measuring the signal from the switch and analyzing it.
+
+
 Servomechanisms
 ===============
 
@@ -198,6 +257,7 @@ we are going to connect it to the ``vin`` pin of our board -- this way it is
 connected directly to the USB port, and not powered through the board.
 
 .. image:: ./images/servo.png
+    :width: 512px
 
 .. caution::
     Servos and motors usually require a lot of current, more then your board
