@@ -425,7 +425,7 @@ You can use the WebREPL to upload files to the board from your computer. To do
 that, you need to open a terminal in the directory where you unpacked the
 WebREPL files, and run the command:
 
-.. code-block:: bash
+.. code-block::
     python webrepl_cli.py yourfile.xxx XXX.XXX.XXX.XXX:
 
 Where ``yourfile.xxx`` is the file you want to send, and ``XXX.XXX.XXX.XXX`` is
