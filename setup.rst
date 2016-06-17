@@ -102,7 +102,7 @@ To exit screen, press ctrl+A and then capital K.
 
 
 Windows
--------machine.freq(160000000)
+-------
 
 For the serial interface to appear in your system, you will need to install the drivers_ for CP2102. Once you have that, you can use either Hyper Terminal or PuTTy to connect to it, following this guide_.
 
