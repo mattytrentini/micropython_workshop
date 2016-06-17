@@ -102,7 +102,7 @@ To exit screen, press ctrl+A and then capital K.
 
 
 Windows
--------
+-------machine.freq(160000000)
 
 For the serial interface to appear in your system, you will need to install the drivers_ for CP2102. Once you have that, you can use either Hyper Terminal or PuTTy to connect to it, following this guide_.
 
@@ -123,3 +123,15 @@ It's traditional to start with a "Hello world!" program, so type this and press 
 If you see "Hello world!" displayed in the next line, then congratulations, you got it working.
 
 .. _guide: https://techawarey.wordpress.com/tag/serial-port-communication-in-windows-7-using-hyper-terminal-and-putty/
+
+
+Official Documentation and Support
+==================================
+
+The official documentation for this port of Micropython is available at
+http://micropython.org/resources/docs/en/latest/esp8266/. There is a also a
+forum on which you can ask questions and get help, located at
+http://forum.micropython.org/. Finally, there are ``#esp8266`` and
+``#micropython`` channels on http://freenode.net IRC network, where people chat
+in real time. Remember that all people there are just users like you, but
+possibly more experienced, and not employees who get paid to help you.
