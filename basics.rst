@@ -62,7 +62,8 @@ Note, that when you are typing this, it will look more like::
 That's because the console automatically understands that when you indent a
 line, you mean it to be a block of code inside the "for" loop. You have to
 un-indent the last line (by removing the spaces with backspace) to finish this
-command.
+command. You can avoid that by using "paste mode" -- press ``ctrl+E``, paste
+your code, and then press ``ctrl+D`` to have it executed.
 
 What happened? Nothing interesting, the LED just shines like it did. That's
 because the program blinked that LED as fast as it could -- so fast, that we
