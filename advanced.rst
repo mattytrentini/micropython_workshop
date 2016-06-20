@@ -169,3 +169,29 @@ and for the 7- and 14-segment displays::
     display = Seg7x4(i2c)
     display.push("8.0:0.8")
     display.show()
+
+
+TFT LCD Display
+===============
+
+The I²C protocol is nice and simple, but not very fast, so it's only good when
+you have a few pixels to switch. With larger displays, it's much better to use
+SPI, which can be much faster.
+
+Here is an example on how to connect an ILI9340 display:
+
+.. image:: ./images/tft.png
+    :width: 512px
+
+And here is a simple library that lets you draw on that display::
+
+    from machine import Pin, SPI
+    import ili9341
+    spi = SPI(miso=Pin(12), mosi=Pin(13), sck=Pin(14))
+    display = ili9341.ILI9341(spi, cs=Pin(2), dc=Pin(4), rst=Pin(5))
+    display.fill(ili9341.color565(0xff, 0x11, 0x22))
+    display.pixel(120, 160, 0)
+
+As you can see, the display is still quite slow -- there are a lot of bytes to
+send, and we are using software SPI implementation here. The speed will greatly
+improve when Micropython adds hardware SPI support.
