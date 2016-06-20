@@ -77,7 +77,7 @@ that you don't have to care about all the gory details -- you just call
 high-level commands, and the libraries and/or hardware in your board handles it
 all for you.
 
-Among the most popular protocols are UART, I2C and SPI. We are going to have
+Among the most popular protocols are UART, I²C and SPI. We are going to have
 examples of each of them, but we are not going to get into details of how they
 work internally. It's enough to know that they let you send bytes to the
 device, and receive bytes in response.
@@ -123,3 +123,43 @@ ESP9266 has that covered::
 The connections are simple:
 
 .. image:: ./images/dht11.png
+    :width: 512px
+
+
+LED Matrix and 7-segment Displays
+=================================
+
+Adafruit sells a lot of "backpacks" with 7- or 14-segment displays or LED
+matrices, that we can control easily over I²C. They use a HT16K33 chip, so that
+we don't have to switch on and off the individual LEDs -- we just tell the chip
+what to do, and it takes care of the rest.
+
+The schematic for connecting any I²C device will be almost always the same:
+
+.. image:: ./images/matrix.png
+    :width: 512px
+
+The communication with the backpack is relatively simple, but I wrote two
+libraries for making it more convenient. For the matrix::
+
+    from machine import I2C, Pin
+    from ht16k33_matrix import Matrix8x8
+    i2c = I2C(sda=Pin(4), scl=Pin(5))
+    display = Matrix8x8(i2c)
+    display.brightness(8)
+    display.blink_rate(2)
+    display.fill(True)
+    display.pixel(0, 0, False)
+    display.pixel(7, 0, False)
+    display.pixel(0, 7, False)
+    display.pixel(7, 7, False)
+    display.show()
+
+and for the 7- and 14-segment displays::
+
+    from machine import I2C, Pin
+    from ht16k33_seg import Seg7x4
+    i2c = I2C(sda=Pin(4), scl=Pin(5))
+    display = Seg7x4(i2c)
+    display.push("8.0:0.8")
+    display.show()
