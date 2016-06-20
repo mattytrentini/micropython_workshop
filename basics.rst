@@ -472,7 +472,8 @@ web services. The easiest way is to just do a HTTP request -- what your web
 browser does to get the content of web pages::
 
     import urequests
-    r = urequests.get("http://duckduckgo.com/?q=micropython&format=json").json()    print(r)
+    r = urequests.get("http://duckduckgo.com/?q=micropython&format=json").json()
+    print(r)
     print(r['AbstractText'])
 
 You can use that to get information from websites, such as weather forecasts::
