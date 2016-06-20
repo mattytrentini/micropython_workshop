@@ -139,6 +139,12 @@ The schematic for connecting any I²C device will be almost always the same:
 .. image:: ./images/matrix.png
     :width: 512px
 
+.. note::
+
+    The two resistors on the schematic are needed for the protocol to work
+    reliably with longer wires. For our experiments, it's enough to rely on
+    the pull-up resistors that are built into the board we are using.
+
 The communication with the backpack is relatively simple, but I wrote two
 libraries for making it more convenient. For the matrix::
 
