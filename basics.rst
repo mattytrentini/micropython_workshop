@@ -335,7 +335,7 @@ We can even play melodies! For instance, here's the musical scale::
     for tone, length in zip(melody, rhythm):
         beeper.freq(tones[tone])
         time.sleep(tempo/length)
-    	beeper.deinit()
+    beeper.deinit()
 
 Unfortunately, the maximum frequency of PWM is currently 1000Hz, so you can't
 play any notes higher than that.
