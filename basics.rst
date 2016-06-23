@@ -316,7 +316,6 @@ We can even play melodies! For instance, here's the musical scale::
 
     from machine import Pin, PWM
     import time
-
     tempo = 5
     tones = {
         'c': 262,
@@ -329,13 +328,14 @@ We can even play melodies! For instance, here's the musical scale::
         'C': 523,
         ' ': 0,
     }
-    beeper = PWM(Pin(2, Pin.OUT))
+    beeper = PWM(Pin(14, Pin.OUT), freq=440, duty=512)
     melody = 'cdefgabC'
     rhythm = [8, 8, 8, 8, 8, 8, 8, 8]
 
     for tone, length in zip(melody, rhythm):
         beeper.freq(tones[tone])
         time.sleep(tempo/length)
+    	beeper.deinit()
 
 Unfortunately, the maximum frequency of PWM is currently 1000Hz, so you can't
 play any notes higher than that.
