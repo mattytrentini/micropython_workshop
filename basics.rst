@@ -191,7 +191,7 @@ wires are put together::
     while True:
         if not button.value():
             led.value(not led.value())
-            while button.value():
+            while not button.value():
                 pass
 
 We have used ``Pin.IN`` because we want to use ``gpio14`` as an input pin, on
@@ -224,7 +224,7 @@ to stabilize::
         if not button.value():
             led.value(not led.value())
             time.sleep_ms(300)
-            while button.value():
+            while not button.value():
                 pass
 
 Here we wait 3/10 of a second -- too fast for a human to notice, but enough for
