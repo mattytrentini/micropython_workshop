@@ -10,12 +10,13 @@ To participate in the workshop, you will need the following:
   * If it's Windows or Mac OS, make sure to install `drivers`_ for the CP2102 UBS2TTL chip. MacOS El Capitan requires `disabling kext signing`_ to install it.
   * A micro-USB cable with data lines that fits your USB port.
   * You will need a terminal application installed. For Linux and Mac you can
-    use ``screen``, which is installed by default. For Windows we recommend `PuTTy`_
+    use ``screen``, which is installed by default. For Windows we recommend `PuTTy`_ or `CoolTerm`_.
   * Please note that the workshop will be in English.
 
 .. _drivers: http://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx
 .. _disabling kext signing: http://farazmemon.com/2016/02/07/flashing-latest-firmware-on-nodemcu-devkit-v0-9-osx-el-capitan/
 .. _PuTTy: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+.. _CoolTerm: http://freeware.the-meiers.org/
 
 In addition, at the workshop, you will receive:
   * "NodeMCU AMICA" development board with ESP8266 on it,
@@ -26,6 +27,8 @@ In addition, at the workshop, you will receive:
   * Piezoelectric speaker.
 
 You will take all that home with you.
+
+The firmware that is flashed on the boards is also available at https://bitbucket.org/thesheep/espworkshop/downloads/firmware-combined.bin
 
 There will be also some additional hardware available for experimenting,
 which you won't take home.
@@ -94,9 +97,13 @@ appears with a terminal program.
 Linux and MacOS
 ---------------
 
-Simply open a terminal and run the following command::
+Simply open a terminal and run the following commands. On Linux::
 
     screen /dev/ttyUSB0 115200
+
+On MacOS::
+
+    screen /dev/tty.SLAB_USBtoUART 115200
 
 To exit screen, press ctrl+A and then capital K.
 
@@ -104,7 +111,7 @@ To exit screen, press ctrl+A and then capital K.
 Windows
 -------
 
-For the serial interface to appear in your system, you will need to install the drivers_ for CP2102. Once you have that, you can use either Hyper Terminal or PuTTy to connect to it, following this guide_.
+For the serial interface to appear in your system, you will need to install the drivers_ for CP2102. Once you have that, you can use either Hyper Terminal, PuTTy or CoolTerm to connect to it, following this guide_.
 
 The parameters for the connection are: 115200 baud rate, 8 data bits, no parity, 1 stop bit, no flow control.
 
