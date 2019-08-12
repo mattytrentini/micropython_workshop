@@ -200,8 +200,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   ('index', 'MicroPythonWorkshop.tex', u'MicroPython Workshop Documentation',
-   u'Matt Trentini
-  ', 'manual'),
+   u'Matt Trentini', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -231,8 +230,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'micropythonworkshop', u'MicroPython Workshop Documentation',
-     [u'Matt Trentini
-    '], 1)
+     [u'Matt Trentini'], 1)
 ]
 
 # If true, show URL addresses after external links.
