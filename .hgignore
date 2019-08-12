@@ -1,7 +1,0 @@
-syntax: glob
-*~
-.*.swp
-*.DS_Store
-_build/*
-_static/*
-.idea
