@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# Micropython on ESP8266 Workshop documentation build configuration file, created by
-# sphinx-quickstart on Wed Jun  8 21:43:59 2016.
+# MicroPython on ESP8266 Workshop documentation build configuration file, created by
+# sphinx-quickstart on Wed Jun  8 21:43:59 2019.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -46,8 +46,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Micropython on ESP8266 Workshop'
-copyright = u'2016, Radomir Dopieralski'
+project = u'MicroPython Workshop'
+copyright = u'2019, Matt Trentini'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -179,7 +179,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'MicropythononESP8266Workshopdoc'
+htmlhelp_basename = 'MicroPythonWorkshopdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -199,8 +199,9 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'MicropythononESP8266Workshop.tex', u'Micropython on ESP8266 Workshop Documentation',
-   u'Radomir Dopieralski', 'manual'),
+  ('index', 'MicroPythonWorkshop.tex', u'MicroPython Workshop Documentation',
+   u'Matt Trentini
+  ', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -229,8 +230,9 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'micropythononesp8266workshop', u'Micropython on ESP8266 Workshop Documentation',
-     [u'Radomir Dopieralski'], 1)
+    ('index', 'micropythonworkshop', u'MicroPython Workshop Documentation',
+     [u'Matt Trentini
+    '], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -243,8 +245,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'MicropythononESP8266Workshop', u'Micropython on ESP8266 Workshop Documentation',
-   u'Radomir Dopieralski', 'MicropythononESP8266Workshop', 'One line description of project.',
+  ('index', 'MicroPythonWorkshop', u'MicroPython Workshop Documentation',
+   u'Matt Trentini', 'MicroPythonWorkshop', 'MicroPython Workshop Documentation',
    'Miscellaneous'),
 ]
 
@@ -264,13 +266,13 @@ texinfo_documents = [
 # -- Options for Epub output ----------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'Micropython on ESP8266 Workshop'
-epub_author = u'Radomir Dopieralski'
-epub_publisher = u'Radomir Dopieralski'
-epub_copyright = u'2016, Radomir Dopieralski'
+epub_title = u'MicroPython Workshop'
+epub_author = u'Matt Trentini'
+epub_publisher = u'Matt Trentini'
+epub_copyright = u'2019, Matt Trentini'
 
 # The basename for the epub file. It defaults to the project name.
-#epub_basename = u'Micropython on ESP8266 Workshop'
+#epub_basename = u'MicroPython Workshop'
 
 # The HTML theme for the epub output. Since the default themes are not optimized
 # for small screen space, using the same theme for HTML and epub output is
