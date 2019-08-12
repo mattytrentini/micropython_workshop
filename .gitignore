@@ -1,4 +1,4 @@
-syntax: glob
+# Sphinx / generic
 *~
 .*.swp
 *.DS_Store
