@@ -20,6 +20,8 @@ Contents:
    shields/ambient_light.rst
    shields/pir.rst
    shields/infrared.rst
+   network.rst
+   mqtt.rst
 
 Indices and tables
 ==================
