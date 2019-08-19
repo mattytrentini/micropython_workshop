@@ -48,7 +48,7 @@ to use.
     different software. Make sure to refer to the image below to determine
     which pins are which.
 
-.. image:: ./images/board.png
+.. image:: /images/board.png
     :width: 512px
 
 

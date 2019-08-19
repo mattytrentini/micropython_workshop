@@ -11,17 +11,17 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   intro.rst
-   setup.rst
-   shields/none.rst
-   shields/rgb_led.rst
-   shields/led_matrix.rst
-   shields/buzzer.rst
-   shields/ambient_light.rst
-   shields/pir.rst
-   shields/infrared.rst
-   network.rst
-   mqtt.rst
+   pages/intro.rst
+   pages/setup.rst
+   pages/shields/none.rst
+   pages/shields/rgb_led.rst
+   pages/shields/led_matrix.rst
+   pages/shields/buzzer.rst
+   pages/shields/ambient_light.rst
+   pages/shields/pir.rst
+   pages/shields/infrared.rst
+   pages/network.rst
+   pages/mqtt.rst
 
 Indices and tables
 ==================
