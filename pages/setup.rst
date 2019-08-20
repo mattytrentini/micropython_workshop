@@ -7,10 +7,13 @@ Prerequisites
 To participate in the workshop, you will need the following:
 
   * A laptop with Linux, Mac OS or Windows and at least one free USB port.
-  * If it's Windows or Mac OS, make sure to install `drivers`_ for the CH340 USB to Serial chip. MacOS El Capitan may require `disabling kext signing`_ to install it.
+  * If it's Windows or Mac OS, make sure to install `drivers`_ for the CH340
+    USB to Serial chip. MacOS El Capitan may require `disabling kext signing`_
+    to install it.
   * A micro-USB cable (with data lines) that fits your USB port.
   * You will need a terminal application installed. For Linux and Mac you can
-    use ``screen``, which is installed by default. For Windows we recommend `PuTTy`_ or `TeraTerm`_.
+    use ``screen``, which is installed by default. For Windows we recommend
+    `PuTTy`_ or `TeraTerm`_.
   * Please note that the workshop will be in English.
 
 .. _drivers: https://wiki.wemos.cc/downloads
@@ -23,7 +26,8 @@ In addition, at the workshop, you will receive:
   * RGB LED Shield
   * LED Matrix Shield
 
-Other Shields will be available for use during the workshop (but at lower numbers, sharing is caring!).
+Other Shields will be available for use during the workshop (but at lower
+numbers, sharing is caring!).
 
 The firmware that is flashed on the boards is also available at https://micropython.org/download#esp8266
 
@@ -105,23 +109,29 @@ To exit screen, press ctrl+A and then capital K.
 Windows
 -------
 
-For the serial interface to appear in your system, you will need to install the drivers_ for CP2102. Once you have that, you can use either Hyper Terminal, PuTTy or CoolTerm to connect to it, following this guide_.
+For the serial interface to appear in your system, you will need to install the
+drivers_ for CP2102. Once you have that, you can use either Hyper Terminal,
+PuTTy or CoolTerm to connect to it, following this guide_.
 
-The parameters for the connection are: 115200 baud rate, 8 data bits, no parity, 1 stop bit, no flow control.
+The parameters for the connection are: 115200 baud rate, 8 data bits, no
+parity, 1 stop bit, no flow control.
 
 
 Hello world!
 ------------
 
-Once you are connected, press "enter" and you should see the Micropython prompt, that looks like this::
+Once you are connected, press "enter" and you should see the Micropython
+prompt, that looks like this::
 
     >>>
 
-It's traditional to start with a "Hello world!" program, so type this and press "enter"::
+It's traditional to start with a "Hello world!" program, so type this and
+press "enter"::
 
     print("Hello world!")
 
-If you see "Hello world!" displayed in the next line, then congratulations, you got it working.
+If you see "Hello world!" displayed in the next line, then congratulations,
+you got it working.
 
 .. _guide: https://techawarey.wordpress.com/tag/serial-port-communication-in-windows-7-using-hyper-terminal-and-putty/
 
