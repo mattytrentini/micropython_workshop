@@ -35,24 +35,23 @@ The firmware that is flashed on the boards is also available at https://micropyt
 Development Board
 =================
 
-The board we are using is called "NodeMCU AMICA" and has an ESP8266 module
+The board we are using is called a "WEMOS D1 Mini" which has an ESP8266 module
 on it, which we will be programming. It comes with the latest version of
-Micropython already setup on it, together with all the drivers we are going
+MicroPython already setup on it, together with all the drivers we are going
 to use.
 
 .. note::
     The D0, D1, D2, ... numbers printed on the board are different from what
-    Micropython uses -- because originally those boards were made for a
+    MicroPython uses -- because originally those boards were made for a
     different software. Make sure to refer to the image below to determine
     which pins are which.
 
-.. image:: /images/board.png
-    :width: 512px
+.. image:: /images/wemos_d1_mini_top.png
 
 
 On top it has a micro-USB socket, for connecting to the computer. Next to it
-are two buttons, one for reset and one for flashing. Then on both sides of the
-board are two rows of pins, to which we will be connecting cables.
+is a reset button. Then on both sides of the
+board are two rows of pins, to which we will be connecting the shields.
 
 The symbols meaning is as follows:
 
@@ -62,31 +61,30 @@ The symbols meaning is as follows:
     inside.
   * ``gnd`` - this is the ground. Think about it like the minus side of the
     battery. They are also all connected.
-  * ``gpioXX`` - "gpio" stands for "general purpose input output". Those are
-    the pins we will be using for sending and receiving signals to and from
-    various devices that we will connect to them. They can act as output --
-    pretty much like a switch that you can connect to plus or to minus with
-    your program.  Or they can act as input, telling your program whether they
-    are connected to plus or minus.
-  * ``a0`` - this is the analog pin. It can measure the voltage that is applied
+  * ``Dx`` - These are "Digital" pins, or "GPIO"s (which stands for "General
+    Purpose Input Output"). Those are the pins we will be using for sending and
+    receiving signals to and from various devices that we will connect to them.
+    They can act as output -- pretty much like a switch that you can connect to
+    plus or to minus with your program.  Or they can act as input, telling your
+    program whether they are connected to plus or minus.
+  * ``A0`` - this is the analog pin. It can measure the voltage that is applied
     to it, but it can only handle up to 1V.
-  * ``vin`` - this pin is connected with the 5V from your computer. You can
+  * ``5v0`` - this pin is connected with the 5V from your computer. You can
     also use it to power your board with a battery when it's not connected to
     the computer. The voltage applied here will be internally converted to the
     3.3V that the board needs.
-  * ``rst`` - this is a reset button (and a corresponding pin, to which you can
-    connect external button).
-  * ``flash`` - hold down this button while resetting to bring the board into
-    programming mode (also known as flashing mode).
-
-The other pins are used internally by the board, and we will not be connecting
-anything to them.
+  * ``RX`` / ``TX`` - these are connected to the UART port used for device
+    communications. This UART port is the one also used by the USB to
+    ommunicate with the device from your PC, so don't connect anything to these
+    pins or your USB communications might have problems!
+  * ``RST`` - this is a reset pin (connected to the corresponding RESET
+    button).
 
 
 Connecting
 ==========
 
-The board you got should already have Micropython with all the needed libraries
+The board you got should already have MicroPython with all the needed libraries
 flashed on it. In order to access its console, you will need to connect it to
 your computer with the micro-USB cable, and access the serial interface that
 appears with a terminal program.
@@ -120,7 +118,7 @@ parity, 1 stop bit, no flow control.
 Hello world!
 ------------
 
-Once you are connected, press "enter" and you should see the Micropython
+Once you are connected, press "enter" and you should see the MicroPython
 prompt, that looks like this::
 
     >>>
@@ -139,10 +137,11 @@ you got it working.
 Official Documentation and Support
 ==================================
 
-The official documentation for this port of Micropython is available at
-http://micropython.org/resources/docs/en/latest/esp8266/. There is a also a
-forum on which you can ask questions and get help, located at
-http://forum.micropython.org/. Finally, there are ``#esp8266`` and
-``#micropython`` channels on http://freenode.net IRC network, where people chat
-in real time. Remember that all people there are just users like you, but
-possibly more experienced, and not employees who get paid to help you.
+The official documentation for this port of MicroPython is available at
+http://micropython.org/resources/docs/en/latest/esp8266/.
+
+There is a also a forum on which you can ask questions and get help, located at
+http://forum.micropython.org/.
+
+Finally, there is a MicroPython Slack channel that you can join at
+https://slack-micropython.herokuapp.com/, where people chat in real time.
