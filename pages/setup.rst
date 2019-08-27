@@ -144,7 +144,7 @@ Official Documentation and Support
 ==================================
 
 The official documentation for this port of MicroPython is available at
-http://micropython.org/resources/docs/en/latest/esp8266/.
+http://docs.micropython.org/en/latest/esp8266/quickref.html.
 
 There is a also a forum on which you can ask questions and get help, located at
 http://forum.micropython.org/.
