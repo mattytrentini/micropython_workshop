@@ -45,7 +45,7 @@ to use.
     different software. Make sure to refer to the image below to determine
     which pins are which.
 
-.. image:: /images/wemos_d1_mini_top.png
+.. image:: /images/wemos_d1_mini_top.PNG
 
 
 On top it has a micro-USB socket, for connecting to the computer. Next to it
