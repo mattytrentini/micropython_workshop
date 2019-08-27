@@ -13,13 +13,12 @@ To participate in the workshop, you will need the following:
   * A micro-USB cable (with data lines) that fits your USB port.
   * You will need a terminal application installed. For Linux and Mac you can
     use ``screen``, which is installed by default. For Windows we recommend
-    `PuTTy`_ or `TeraTerm`_.
-  * Please note that the workshop will be in English.
+    `TeraTerm`_ or `PuTTy`_.
 
 .. _drivers: https://wiki.wemos.cc/downloads
 .. _disabling kext signing: http://farazmemon.com/2016/02/07/flashing-latest-firmware-on-nodemcu-devkit-v0-9-osx-el-capitan/
-.. _PuTTy: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 .. _TeraTerm: https://ttssh2.osdn.jp/index.html.en
+.. _PuTTy: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 In addition, at the workshop, you will receive:
   * "WEMOS D1 Mini" development board (with an ESP8266 at the heart of it)
@@ -89,6 +88,9 @@ flashed on it. In order to access its console, you will need to connect it to
 your computer with the micro-USB cable, and access the serial interface that
 appears with a terminal program.
 
+The parameters for the connection are: 115200 baud rate, 8 data bits, no
+parity, 1 stop bit, no flow control.
+
 
 Linux and MacOS
 ---------------
@@ -107,12 +109,16 @@ To exit screen, press ctrl+A and then capital K.
 Windows
 -------
 
-For the serial interface to appear in your system, you will need to install the
-drivers_ for CP2102. Once you have that, you can use either Hyper Terminal,
-PuTTy or CoolTerm to connect to it, following this guide_.
+Open either PuTTY of TeraTerm, and connect to the appropriate COM port. The
+easiest way to determine the COM port is to open Device Manager and look under
+the "Ports" category. If more than one device is there, the easiest way to
+determine the right one may simply to be to unplug and re-plug the device.
 
-The parameters for the connection are: 115200 baud rate, 8 data bits, no
-parity, 1 stop bit, no flow control.
+For Tera Term, this connection can be made going to File -> New Connection
+(if the New Connection window doesn't open by default), select Serial, and then
+select the COM port previously found. The baud rate is set incorrectly by
+default, and so you may need to go to Setup -> Serial Port and set the
+Baud rate to 115200.
 
 
 Hello world!
