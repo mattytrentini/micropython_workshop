@@ -1,6 +1,6 @@
 # MicroPython Workshop
 
-The purpose of this repository is to make a Sphinx-based web guide for running a MicroPython workshop (which can then be hosted on [Read the Docs](https://readthedocs.org/)).
+The purpose of this repository is to make a Sphinx-based web guide for running a MicroPython workshop. This is hosted on [Read the Docs](https://micropython-workshop.readthedocs.io/en/latest/).
 
 The purpose of the workshop will be to take someone that may be familiar with Python but has never used it on a microcontroller, and allow them to smoothly sail through the treacherous seas towards getting that first piece of code running that makes the hardware do something fun. From there it aims to provide the resources and guidance necessary to develop skills further and progress towards project-based learning.
 
