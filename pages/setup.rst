@@ -10,15 +10,21 @@ To participate in the workshop, you will need the following:
   * If it's Windows or Mac OS, make sure to install `drivers`_ for the CH340
     USB to Serial chip. MacOS El Capitan may require `disabling kext signing`_
     to install it.
-  * A micro-USB cable (with data lines) that fits your USB port.
-  * You will need a terminal application installed. For Linux and Mac you can
+  * A terminal application installed. For Linux and Mac you can
     use ``screen``, which is installed by default. For Windows we recommend
     `TeraTerm`_ or `PuTTy`_.
+  * Python, with a module for allowing file transfer to MicroPython devices.
+    `rshell`_ is the recommended tool, however there are many other options
+    out there (such as `mpfshell`_ or `ampy`_)
+  * A micro-USB cable (with data lines) that fits your USB port.
 
 .. _drivers: https://wiki.wemos.cc/downloads
 .. _disabling kext signing: http://farazmemon.com/2016/02/07/flashing-latest-firmware-on-nodemcu-devkit-v0-9-osx-el-capitan/
 .. _TeraTerm: https://ttssh2.osdn.jp/index.html.en
 .. _PuTTy: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+.. _rshell: https://github.com/dhylands/rshell
+.. _mpfshell: https://github.com/wendlers/mpfshell
+.. _ampy: https://github.com/pycampers/ampy
 
 In addition, at the workshop, you will receive:
   * "WEMOS D1 Mini" development board (with an ESP8266 at the heart of it)
@@ -125,7 +131,7 @@ Hello world!
 ------------
 
 Once you are connected, press "enter" and you should see the MicroPython
-prompt, that looks like this::
+REPL, that looks like this::
 
     >>>
 
@@ -137,7 +143,39 @@ press "enter"::
 If you see "Hello world!" displayed in the next line, then congratulations,
 you got it working.
 
-.. _guide: https://techawarey.wordpress.com/tag/serial-port-communication-in-windows-7-using-hyper-terminal-and-putty/
+
+Running Scripts
+===============
+
+The MicroPython REPL is very powerful for running specific commands, but for
+repeatedly running commands it can get pretty messy. If you have a script
+that you just want to run once, it might be easiest just to copy the code
+into the REPL. Pressing Ctrl+E will put the device into "Paste Mode" which will
+neatly retain the formatting, and only run once Paste Mode is exited (via
+Ctrl+D).
+
+If a script is to be run more than once however, it likely makes more sense to
+put the script into a file on the MicroPython internal file system. On startup,
+A MicroPython device will search for a file named `boot.py` and run it if it is
+found. Following this, the same will be done for `main.py`. Upon completion of
+both of these files (successfully or otherwise), the REPL will begin.
+
+
+File Transfer
+-------------
+
+In order for the device to run your script on startup, or to enable importing
+of modules into the MicroPython workspace, you will need to put the appropriate
+files on the device. To do this via `rshell`, the easiest way will be to
+connect to your board (make sure any other terminals to your board are
+closed!), and then copy the files across, such as below::
+
+    rshell -p PORT
+    cp main.py /flash
+
+Where `PORT` will be the device connection to your computer (something like
+`COM1` on windows, or `/dev/ttyACM0` on MAC / Linux.
+
 
 
 Official Documentation and Support
