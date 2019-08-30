@@ -131,9 +131,11 @@ Hello world!
 ------------
 
 Once you are connected, press "enter" and you should see the MicroPython
-REPL, that looks like this::
+interactive terminal (or `REPL`_)  prompt, that looks like this::
 
     >>>
+
+.. _REPL: https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop
 
 It's traditional to start with a "Hello world!" program, so type this and
 press "enter"::
@@ -166,7 +168,7 @@ File Transfer
 
 In order for the device to run your script on startup, or to enable importing
 of modules into the MicroPython workspace, you will need to put the appropriate
-files on the device. 
+files on the device.
 
 First, we'll make a file that will be run on device startup. Make a file
 named `main.py` in your current directory, and put the "hello world" text
