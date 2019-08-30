@@ -161,6 +161,11 @@ press "enter"::
 If you see "Hello world!" displayed in the next line, then congratulations,
 you got it working.
 
+Note that your computer sleeping / closing your laptop lid may cause the
+connection to the Wemos D1 Mini to close - if your terminal appears to not be
+responding, ensure that the communications port is still open, and reopen it
+if not!
+
 
 Running Scripts
 ===============
