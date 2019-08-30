@@ -14,8 +14,8 @@ To participate in the workshop, you will need the following:
     use ``screen``, which is installed by default. For Windows we recommend
     `TeraTerm`_ or `PuTTy`_.
   * Python, with a module for allowing file transfer to MicroPython devices.
-    `rshell`_ is the recommended tool, however there are many other options
-    out there (such as `mpfshell`_ or `ampy`_)
+    `rshell`_ is the recommended tool for Linux / Mac (doesn't play nice with
+    Windows), and `mpfshell`_ is the recommended tool for Windows.
   * A micro-USB cable (with data lines) that fits your USB port.
 
 .. _drivers: https://wiki.wemos.cc/downloads
