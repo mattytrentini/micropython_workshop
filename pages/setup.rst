@@ -166,12 +166,27 @@ File Transfer
 
 In order for the device to run your script on startup, or to enable importing
 of modules into the MicroPython workspace, you will need to put the appropriate
-files on the device. To do this via `rshell`, the easiest way will be to
-connect to your board (make sure any other terminals to your board are
-closed!), and then copy the files across, such as below::
+files on the device. 
+
+First, we'll make a file that will be run on device startup. Make a file
+named `main.py` in your current directory, and put the "hello world" text
+from above into the file. This will make the device print "Hello World!" before
+entering the REPL.
+
+Then we need to put this file onto the device. The easiest way to do this, via
+`mpfshell` or `rshell`, will be to connect to your board (make sure any other
+terminals to your board are closed, such as the one used for your "Hello
+world" test earlier!), and then copy the files across, such as below for
+`rshell`::
 
     rshell -p PORT
     cp main.py /flash
+
+or as follows for `mpfshell`::
+
+    python -m mp.mpfshell
+    open PORT
+    put main.py
 
 Where `PORT` will be the device connection to your computer (something like
 `COM1` on windows, or `/dev/ttyACM0` on MAC / Linux.
