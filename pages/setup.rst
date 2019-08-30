@@ -115,10 +115,26 @@ To exit screen, press ctrl+A and then capital K.
 Windows
 -------
 
-Open either PuTTY of TeraTerm, and connect to the appropriate COM port. The
-easiest way to determine the COM port is to open Device Manager and look under
-the "Ports" category. If more than one device is there, the easiest way to
-determine the right one may simply to be to unplug and re-plug the device.
+To connect to the device, we'll need to know the serial port identifier, or
+COM port, of the device. First of all ensure your Wemos D1 Mini is connected
+to you computer, or else the port will not appear. For the initial connection
+it may take several minutes for the device driver to properly work it's magic
+and make the port appear, so monitor the device installation icon in the
+taskbar to see when it's ready to go!
+
+The port can be then found by looking in the Device Manager - the easiest way
+to get there is to search ``dev man`` in the Start menu search.
+If this does not work, there is a `Lifewire article`_ that details how to find
+the Device Manager in various versions of Windows.
+
+.. _Lifewire article: https://www.lifewire.com/how-to-open-device-manager-2626075#mntl-sc-block_1-0-9
+
+Once in the Device Manager, the serial ports found open on your computer can be
+found under the "Ports" category, with the name of the port (which we will use
+for connecting to the device) in brackets after the name of the device
+(of the form COMx on Windows). If more than one device is in the Port list,
+the easiest way to determine the right one may simply to be to unplug and
+re-plug the device.
 
 For Tera Term, this connection can be made going to File -> New Connection
 (if the New Connection window doesn't open by default), select Serial, and then
@@ -191,7 +207,7 @@ or as follows for `mpfshell`::
     put main.py
 
 Where `PORT` will be the device connection to your computer (something like
-`COM1` on windows, or `/dev/ttyACM0` on MAC / Linux.
+`COM1` on windows, or `/dev/ttyACM0` on MAC / Linux).
 
 
 
