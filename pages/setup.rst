@@ -14,8 +14,8 @@ To participate in the workshop, you will need the following:
     use ``screen``, which is installed by default. For Windows we recommend
     `TeraTerm`_ or `PuTTy`_.
   * Python, with a module for allowing file transfer to MicroPython devices.
-    `rshell`_ is the recommended tool, however there are many other options
-    out there (such as `mpfshell`_ or `ampy`_)
+    `rshell`_ is the recommended tool for Linux / Mac (doesn't play nice with
+    Windows), and `mpfshell`_ is the recommended tool for Windows.
   * A micro-USB cable (with data lines) that fits your USB port.
 
 .. _drivers: https://wiki.wemos.cc/downloads
@@ -115,10 +115,26 @@ To exit screen, press ctrl+A and then capital K.
 Windows
 -------
 
-Open either PuTTY of TeraTerm, and connect to the appropriate COM port. The
-easiest way to determine the COM port is to open Device Manager and look under
-the "Ports" category. If more than one device is there, the easiest way to
-determine the right one may simply to be to unplug and re-plug the device.
+To connect to the device, we'll need to know the serial port identifier, or
+COM port, of the device. First of all, ensure your Wemos D1 Mini is connected
+to your computer or else the port will not appear. The initial connection
+may take several minutes for the device driver to properly work it's magic
+and make the port appear, so monitor the device installation icon in the
+taskbar to see when it's ready to go!
+
+The port can be then found by looking in the Device Manager - the easiest way
+to get there is to search ``dev man`` in the Start menu search.
+If this does not work, there is a `Lifewire article`_ that details how to find
+the Device Manager in various versions of Windows.
+
+.. _Lifewire article: https://www.lifewire.com/how-to-open-device-manager-2626075#mntl-sc-block_1-0-9
+
+Once in the Device Manager, the active serial ports for your computer can be
+found under the "Ports" category, with the name of the port (which we will use
+for connecting to the device) in brackets after the name of the device
+(of the form COMx on Windows). If more than one device is in the Port list,
+the easiest way to determine the right one may simply to be to unplug and
+re-plug the device.
 
 For Tera Term, this connection can be made going to File -> New Connection
 (if the New Connection window doesn't open by default), select Serial, and then
@@ -131,17 +147,24 @@ Hello world!
 ------------
 
 Once you are connected, press "enter" and you should see the MicroPython
-REPL, that looks like this::
+interactive terminal (or `REPL`_)  prompt, that looks like this::
 
     >>>
+
+.. _REPL: https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop
 
 It's traditional to start with a "Hello world!" program, so type this and
 press "enter"::
 
     print("Hello world!")
 
-If you see "Hello world!" displayed in the next line, then congratulations,
-you got it working.
+If you see "Hello world!" displayed in the next line, then congratulations!
+You got it working.
+
+Note that your computer sleeping / closing your laptop lid may cause the
+connection to the Wemos D1 Mini to terminate - if your terminal appears to be
+unresponsive, ensure that the communication port is still open, and reopen it
+if not!
 
 
 Running Scripts
@@ -151,13 +174,13 @@ The MicroPython REPL is very powerful for running specific commands, but for
 repeatedly running commands it can get pretty messy. If you have a script
 that you just want to run once, it might be easiest just to copy the code
 into the REPL. Pressing Ctrl+E will put the device into "Paste Mode" which will
-neatly retain the formatting, and only run once Paste Mode is exited (via
-Ctrl+D).
+neatly retain the formatting and only run once Paste Mode is exited by 
+pressing Ctrl+D.
 
-If a script is to be run more than once however, it likely makes more sense to
+If a script is to be run repeatedly however, it likely makes more sense to
 put the script into a file on the MicroPython internal file system. On startup,
-A MicroPython device will search for a file named `boot.py` and run it if it is
-found. Following this, the same will be done for `main.py`. Upon completion of
+A MicroPython device will search for a file named ``boot.py`` and run it if it is
+found. Following this, the same will be done for ``main.py``. Upon completion of
 both of these files (successfully or otherwise), the REPL will begin.
 
 
@@ -166,15 +189,30 @@ File Transfer
 
 In order for the device to run your script on startup, or to enable importing
 of modules into the MicroPython workspace, you will need to put the appropriate
-files on the device. To do this via `rshell`, the easiest way will be to
-connect to your board (make sure any other terminals to your board are
-closed!), and then copy the files across, such as below::
+files on the device.
+
+First, we'll make a file that will be run on device startup. Make a file
+named ``main.py`` in your current directory, and put the "hello world" text
+from above into the file. This will make the device print "Hello World!" before
+entering the REPL.
+
+Then we need to put this file onto the device. The easiest way to do this, via
+`mpfshell``` or ``rshell``, will be to connect to your board (make sure any other
+terminals to your board are closed, such as the one used for your "Hello
+world" test earlier!), and then copy the files across, such as below for
+``rshell``::
 
     rshell -p PORT
     cp main.py /flash
 
-Where `PORT` will be the device connection to your computer (something like
-`COM1` on windows, or `/dev/ttyACM0` on MAC / Linux.
+or as follows for ``mpfshell``::
+
+    python -m mp.mpfshell
+    open PORT
+    put main.py
+
+Where ``PORT`` will be the device connection to your computer (something like
+``COM1`` on windows, or ``/dev/ttyACM0`` on MAC / Linux).
 
 
 
