@@ -116,9 +116,9 @@ Windows
 -------
 
 To connect to the device, we'll need to know the serial port identifier, or
-COM port, of the device. First of all ensure your Wemos D1 Mini is connected
-to you computer, or else the port will not appear. For the initial connection
-it may take several minutes for the device driver to properly work it's magic
+COM port, of the device. First of all, ensure your Wemos D1 Mini is connected
+to your computer or else the port will not appear. The initial connection
+may take several minutes for the device driver to properly work it's magic
 and make the port appear, so monitor the device installation icon in the
 taskbar to see when it's ready to go!
 
@@ -129,7 +129,7 @@ the Device Manager in various versions of Windows.
 
 .. _Lifewire article: https://www.lifewire.com/how-to-open-device-manager-2626075#mntl-sc-block_1-0-9
 
-Once in the Device Manager, the serial ports found open on your computer can be
+Once in the Device Manager, the active serial ports for your computer can be
 found under the "Ports" category, with the name of the port (which we will use
 for connecting to the device) in brackets after the name of the device
 (of the form COMx on Windows). If more than one device is in the Port list,
@@ -158,12 +158,12 @@ press "enter"::
 
     print("Hello world!")
 
-If you see "Hello world!" displayed in the next line, then congratulations,
-you got it working.
+If you see "Hello world!" displayed in the next line, then congratulations!
+You got it working.
 
 Note that your computer sleeping / closing your laptop lid may cause the
-connection to the Wemos D1 Mini to close - if your terminal appears to not be
-responding, ensure that the communications port is still open, and reopen it
+connection to the Wemos D1 Mini to terminate - if your terminal appears to be
+unresponsive, ensure that the communication port is still open, and reopen it
 if not!
 
 
@@ -174,10 +174,10 @@ The MicroPython REPL is very powerful for running specific commands, but for
 repeatedly running commands it can get pretty messy. If you have a script
 that you just want to run once, it might be easiest just to copy the code
 into the REPL. Pressing Ctrl+E will put the device into "Paste Mode" which will
-neatly retain the formatting, and only run once Paste Mode is exited (via
-Ctrl+D).
+neatly retain the formatting and only run once Paste Mode is exited by 
+pressing Ctrl+D.
 
-If a script is to be run more than once however, it likely makes more sense to
+If a script is to be run repeatedly however, it likely makes more sense to
 put the script into a file on the MicroPython internal file system. On startup,
 A MicroPython device will search for a file named ``boot.py`` and run it if it is
 found. Following this, the same will be done for ``main.py``. Upon completion of
