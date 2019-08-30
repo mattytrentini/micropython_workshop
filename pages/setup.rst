@@ -179,8 +179,8 @@ Ctrl+D).
 
 If a script is to be run more than once however, it likely makes more sense to
 put the script into a file on the MicroPython internal file system. On startup,
-A MicroPython device will search for a file named `boot.py` and run it if it is
-found. Following this, the same will be done for `main.py`. Upon completion of
+A MicroPython device will search for a file named ``boot.py`` and run it if it is
+found. Following this, the same will be done for ``main.py``. Upon completion of
 both of these files (successfully or otherwise), the REPL will begin.
 
 
@@ -192,27 +192,27 @@ of modules into the MicroPython workspace, you will need to put the appropriate
 files on the device.
 
 First, we'll make a file that will be run on device startup. Make a file
-named `main.py` in your current directory, and put the "hello world" text
+named ``main.py`` in your current directory, and put the "hello world" text
 from above into the file. This will make the device print "Hello World!" before
 entering the REPL.
 
 Then we need to put this file onto the device. The easiest way to do this, via
-`mpfshell` or `rshell`, will be to connect to your board (make sure any other
+`mpfshell``` or ``rshell``, will be to connect to your board (make sure any other
 terminals to your board are closed, such as the one used for your "Hello
 world" test earlier!), and then copy the files across, such as below for
-`rshell`::
+``rshell``::
 
     rshell -p PORT
     cp main.py /flash
 
-or as follows for `mpfshell`::
+or as follows for ``mpfshell``::
 
     python -m mp.mpfshell
     open PORT
     put main.py
 
-Where `PORT` will be the device connection to your computer (something like
-`COM1` on windows, or `/dev/ttyACM0` on MAC / Linux).
+Where ``PORT`` will be the device connection to your computer (something like
+``COM1`` on windows, or ``/dev/ttyACM0`` on MAC / Linux).
 
 
 
