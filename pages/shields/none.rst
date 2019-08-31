@@ -10,10 +10,10 @@ will try to build that.
 The boards you have actually have a light built-in, so we can use that. There
 is an LED (light-emitting diode) near the centre of the board. The plus
 side of that LED is connected to the ``3v3`` pins internally, and the minus
-side is connected to GPIO 2 of the microcontroller (note that GPIO 2 is not the
-same as D2!). So we should be able to make that LED shine with our program by
-making GPIO 2 behave like the ``gnd`` pins. We need to "bring the ``gpio2``
-low", or in other words, make it connected to ``gnd``. Let's try that::
+side is connected to ``D4``. So we should be able to make that LED shine with
+our program by making ``D4`` behave like the ``gnd`` pins. We need to "bring
+the ``D4`` pin low", or in other words, make it connected to ``gnd``. Let's try
+that::
 
     from machine import Pin
     import wemos
@@ -38,11 +38,11 @@ module!
 
 Once we have the "Pin" function imported, we use it to create a pin object,
 with the first parameter telling it to use the ``LED`` value from our helper
-module, and the second parameter telling it to switch it into output mode. Once
-created, the pin is assigned to the variable we called "led". This ``LED``
-value simply maps to the number 2, representing GPIO 2 on our microcontroller -
-this can be seen by just entering ``wemos.LED`` in the REPL (after ``wemos`` is
-imported).
+module, and the second parameter telling it to switch it into output mode
+(instead of the input mode it would default to otherwise). Once
+created, the pin is assigned to the variable we called "led". ``D4`` is also
+connected to the LED, and can also be found in the ``wemos`` module - you can
+see that they're the same by running ``wemos.LED == wemos.D4`` in the REPL.
 
 Finally, we bring the pin low, by calling the "off" method on the "led"
 variable. At this point the LED should start shining. It may seem confusing
