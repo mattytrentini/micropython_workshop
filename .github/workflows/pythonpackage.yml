@@ -30,3 +30,11 @@ jobs:
     - name: Make html pages
       run: |
         make html
+    - name: Lint Python files
+      run: |
+        pip install pylint
+        pylint python
+    - name: Check Python file formatting
+      run: |
+        pip install black
+        black --check python
