@@ -1,4 +1,4 @@
 RGB LED Shield
 **************
 
-TODO
+.. image:: /images/rgb_led_shield_top.PNG
