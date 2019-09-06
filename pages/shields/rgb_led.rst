@@ -37,7 +37,7 @@ the Wemos D1 Mini board itself! But first...
    50 is more than likely plenty.
 
 Now we've got that out of the way, let's plug it together! It's important to
-pay attentioned to the orientation of the shield - the "LOLIN" label should be
+pay attention to the orientation of the shield - the "LOLIN" label should be
 over the USB port of the main board. Then simply align the 8 pins on either
 side with the sockets on the main board and push them together!
 
