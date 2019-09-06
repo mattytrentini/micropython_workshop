@@ -5,11 +5,14 @@
 # esp.osdebug(None)
 # import uos
 import machine
+
 # uos.dupterm(None, 1) # disable REPL on UART(0)
 import gc
+
 # For RGB LED control
 import wemos
 import neopixel
+
 # import webrepl
 # webrepl.start()
 gc.collect()
@@ -18,5 +21,5 @@ gc.collect()
 np = neopixel.NeoPixel(machine.Pin(wemos.D4), 7)
 np.fill((0, 0, 0))
 np.write()
-del(np)
+del np
 gc.collect()
