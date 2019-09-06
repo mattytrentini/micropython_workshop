@@ -32,8 +32,8 @@ jobs:
         make html
     - name: Lint Python files
       run: |
-        pip install pylint
-        pylint python
+        pip install flake8
+        flake8 python
     - name: Check Python file formatting
       run: |
         pip install black
