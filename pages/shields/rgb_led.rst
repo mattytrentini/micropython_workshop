@@ -92,3 +92,36 @@ colour.
 You should now have a centre LED that is off, and alternating colours around
 your LED circle - exciting! You now have the full extent of control over these
 LEDs to bend them to your will.
+
+Exercises
+=========
+
+Time to take those concepts and put them into action! The following subsections
+detail different exercises that can be accomplished using the techniques
+covered so far.
+
+Spin Cycle
+----------
+
+Make one LED at a time light up around the circle of LEDs to make a spinning
+animation!
+
+Hint: You can use ``time.sleep()`` to add delays to control the speed of the
+spin!
+
+Extension: Make the LED fade through the colours of the rainbow while it
+spins!
+
+Digital Dice
+------------
+
+Rapidly cycle through LED combinations representing the six sides of a
+(six sided) dice, before slowing down, and ultimately "landing" on one of the
+"sides".
+
+Hint: You can use ``random.getrandbits(n)`` from the ``random`` module to
+generate ``n`` random bits!
+
+Extentsion: Add a signal to show when the face has stopped changing --
+maybe a colour change, or a sequence of flashing (or whatever else takes
+your fancy!).
