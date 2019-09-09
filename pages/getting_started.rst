@@ -1,6 +1,10 @@
 Getting Started
 ***************
 
+This section describes how to start utilising some of the MicroPython specific
+features of your board by itself, before we start adding more hardware into the
+mix in the coming pages.
+
 LED Basics
 ==========
 
