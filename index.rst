@@ -13,7 +13,7 @@ Contents:
 
    pages/intro.rst
    pages/setup.rst
-   pages/shields/none.rst
+   pages/getting_started.rst
    pages/shields/rgb_led.rst
    pages/shields/led_matrix.rst
    pages/shields/buzzer.rst
