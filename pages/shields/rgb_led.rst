@@ -51,6 +51,7 @@ again, and get into the REPL (by connecting to your device in your serial
 terminal software of choice). Now let's run the following commands to get
 these LEDs lit::
 
+    import machine
     import wemos
     import neopixel
     np = neopixel.NeoPixel(machine.Pin(wemos.D4), 7)
