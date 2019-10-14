@@ -7,24 +7,38 @@ Prerequisites
 To participate in the workshop, you will need the following:
 
   * A laptop with Linux, Mac OS or Windows and at least one free USB port.
+
+    * A USB Type A to Micro B cable is provided as part of the workshop kit,
+      however if your laptop only has USB-C ports then bring along either a
+      USB-C to Micro B cable or a USB-C to USB Type A socket dongle.
+
   * If it's Windows or Mac OS, make sure to install `drivers`_ for the CH340
     USB to Serial chip. MacOS El Capitan may require `disabling kext signing`_
     to install it.
-  * A terminal application installed. For Linux and Mac you can
-    use ``screen``, which is installed by default. For Windows we recommend
-    `TeraTerm`_ or `PuTTy`_.
-  * Python, with a module for allowing file transfer to MicroPython devices.
-    `rshell`_ is the recommended tool for Linux / Mac (doesn't play nice with
-    Windows), and `mpfshell`_ is the recommended tool for Windows.
-  * A micro-USB cable (with data lines) that fits your USB port.
+
+  * `Mu`_ installed on your laptop. This will be used for writing code,
+    transferring code to the device, and even running an interactive terminal
+    directly on the microcontroller.
+
+    * You will need to install the alpha of the next version of Mu (found in
+      the box at the top of the download page) in order to work with the
+      microcontroller we're using in the workshop, so make sure you grab this
+      one!
+      Unfortunately they don't provide prebuilt binaries of this for Linux
+      distros, so if that's your weapon of choice you will have to
+      `build from source`_ - condensed set of instructions::
+
+        git clone https://github.com/mu-editor/mu.git
+        cd mu
+        python -m venv env
+        source env/bin/activate
+        pip install -e ".[dev]"
+        python run.py
 
 .. _drivers: https://wiki.wemos.cc/downloads
 .. _disabling kext signing: http://farazmemon.com/2016/02/07/flashing-latest-firmware-on-nodemcu-devkit-v0-9-osx-el-capitan/
-.. _TeraTerm: https://ttssh2.osdn.jp/index.html.en
-.. _PuTTy: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
-.. _rshell: https://github.com/dhylands/rshell
-.. _mpfshell: https://github.com/wendlers/mpfshell
-.. _ampy: https://github.com/pycampers/ampy
+.. _Mu: https://codewith.mu
+.. _build from source: https://mu.readthedocs.io/en/latest/#quickstart
 
 In addition, at the workshop, you will receive:
   * "WEMOS D1 Mini" development board (with an ESP8266 at the heart of it)
@@ -34,7 +48,8 @@ In addition, at the workshop, you will receive:
 Other Shields will be available for use during the workshop (but at lower
 numbers, sharing is caring!).
 
-The firmware that is flashed on the boards is also available at https://micropython.org/download#esp8266
+The firmware that is flashed on the boards is also available at
+https://micropython.org/download#esp8266
 
 
 Development Board
@@ -90,64 +105,35 @@ Connecting
 ==========
 
 The board you got should already have MicroPython with all the needed libraries
-flashed on it. In order to access its console, you will need to connect it to
-your computer with the micro-USB cable, and access the serial interface that
-appears with a terminal program.
+flashed on it - so let's get started, and open up Mu (which hopefully you
+already have installed from the Prerequisites section, if not, get it now!).
+The first thing that should appear is a window asking what type of code or
+device we're using - select the ESP MicroPython option. If you can't find this
+option, you may not have the alpha version necessary! Make sure the top bar of
+the window shows the version as Mu 1.1.0.alpha (or later). If you've selected
+another option (or used Mu for something else previously) then press the Mode
+button to bring the selection menu up again.
 
-The parameters for the connection are: 115200 baud rate, 8 data bits, no
-parity, 1 stop bit, no flow control.
+Now plug your Wemos D1 Mini into your laptop via the Micro USB cable, and you
+should see a "Detected new ESP MicroPython device" message in the bottom left
+and corner of the Mu window (note: this could take a couple of minutes if it
+is the first time you're plugging the device in, especially if you're on
+Windows). Once you see the message, press the REPL button at the top of the
+Mu window - a terminal should appear at the bottom of the Mu window with a
+messsage about MicroPython.
 
-
-Linux and MacOS
----------------
-
-Simply open a terminal and run the following commands. On Linux::
-
-    screen /dev/ttyUSB0 115200
-
-On MacOS::
-
-    screen /dev/tty.SLAB_USBtoUART 115200
-
-To exit screen, press ctrl+A and then capital K.
-
-
-Windows
--------
-
-To connect to the device, we'll need to know the serial port identifier, or
-COM port, of the device. First of all, ensure your Wemos D1 Mini is connected
-to your computer or else the port will not appear. The initial connection
-may take several minutes for the device driver to properly work it's magic
-and make the port appear, so monitor the device installation icon in the
-taskbar to see when it's ready to go!
-
-The port can be then found by looking in the Device Manager - the easiest way
-to get there is to search ``dev man`` in the Start menu search.
-If this does not work, there is a `Lifewire article`_ that details how to find
-the Device Manager in various versions of Windows.
-
-.. _Lifewire article: https://www.lifewire.com/how-to-open-device-manager-2626075#mntl-sc-block_1-0-9
-
-Once in the Device Manager, the active serial ports for your computer can be
-found under the "Ports" category, with the name of the port (which we will use
-for connecting to the device) in brackets after the name of the device
-(of the form COMx on Windows). If more than one device is in the Port list,
-the easiest way to determine the right one may simply to be to unplug and
-re-plug the device.
-
-For Tera Term, this connection can be made going to File -> New Connection
-(if the New Connection window doesn't open by default), select Serial, and then
-select the COM port previously found. The baud rate is set incorrectly by
-default, and so you may need to go to Setup -> Serial Port and set the
-Baud rate to 115200.
+If you instead get "Could not find an attached device." message box, review
+your connections and make sure you've got the driver installed before finally
+unplugging and replugging the device. Hopefully one of these things identify
+the issue at hand!
 
 
 Hello world!
 ------------
 
-Once you are connected, press "enter" and you should see the MicroPython
-interactive terminal (or `REPL`_)  prompt, that looks like this::
+Once you have your terminal to your microcontroller, click in the terminal and
+press "enter" and you should see the MicroPython interactive terminal
+(or `REPL`_)  prompt, that looks like this::
 
     >>>
 
@@ -161,27 +147,25 @@ press "enter"::
 If you see "Hello world!" displayed in the next line, then congratulations!
 You got it working.
 
-Note that your computer sleeping / closing your laptop lid may cause the
-connection to the Wemos D1 Mini to terminate - if your terminal appears to be
-unresponsive, ensure that the communication port is still open, and reopen it
-if not!
-
 
 Running Scripts
 ===============
 
 The MicroPython REPL is very powerful for running specific commands, but for
-repeatedly running commands it can get pretty messy. If you have a script
-that you just want to run once, it might be easiest just to copy the code
-into the REPL. Pressing Ctrl+E will put the device into "Paste Mode" which will
-neatly retain the formatting and only run once Paste Mode is exited by 
-pressing Ctrl+D.
+repeatedly running commands it can get pretty messy. Mu makes life easy in this
+regard, by providing the ability to write scripts directly in the editor, and
+then simply press a button to run the script on the device. If you instead
+wrote ``print("Hello Mu!")`` under the ``# Write your code here :-)`` message
+in the editor, then you can simply press the Run button to run the code on the
+device - you should see `Hello Mu!` appear in the terminal from your script
+running.
 
-If a script is to be run repeatedly however, it likely makes more sense to
-put the script into a file on the MicroPython internal file system. On startup,
-A MicroPython device will search for a file named ``boot.py`` and run it if it is
-found. Following this, the same will be done for ``main.py``. Upon completion of
-both of these files (successfully or otherwise), the REPL will begin.
+If a script is to be run whenever the device is powered however, it likely
+makes more sense to put the script into a file on the MicroPython internal
+file system. On startup, A MicroPython device will search for a file named
+``boot.py`` and run it if it is found. Following this, the same will be done
+for ``main.py``. Upon completion of both of these files (successfully or
+otherwise), the REPL will begin.
 
 
 File Transfer
@@ -191,28 +175,26 @@ In order for the device to run your script on startup, or to enable importing
 of modules into the MicroPython workspace, you will need to put the appropriate
 files on the device.
 
-First, we'll make a file that will be run on device startup. Make a file
-named ``main.py`` in your current directory, and put the "hello world" text
-from above into the file. This will make the device print "Hello World!" before
-entering the REPL.
+In order to access the file browser in Mu, click the REPL button to close it.
+This enables the Files button - if you now press that you will see the files
+on the device, and the files in the Mu folder on your computer (likely empty).
+You can't edit files directly on the device, but if you drag a file from the
+device box to your computer box it will copy if from the device to your
+computer, and then you can right click on it and "Open in Mu" to edit it.
 
-Then we need to put this file onto the device. The easiest way to do this, via
-`mpfshell``` or ``rshell``, will be to connect to your board (make sure any other
-terminals to your board are closed, such as the one used for your "Hello
-world" test earlier!), and then copy the files across, such as below for
-``rshell``::
+Note that you can either see the REPL *or* the File browser, not both at
+the same time - if the button for what you want is disabled, something is
+probably already open and taking up the real estate.
 
-    rshell -p PORT
-    cp main.py /flash
+For an example of file browser utility, if you retrieve and open the
+``wemos.py`` file that we're going to use during the workshop for shield
+interaction, you will see that there is no magic there, just mapping numbers to
+more human-comprehensible names.
 
-or as follows for ``mpfshell``::
-
-    python -m mp.mpfshell
-    open PORT
-    put main.py
-
-Where ``PORT`` will be the device connection to your computer (something like
-``COM1`` on windows, or ``/dev/ttyACM0`` on MAC / Linux).
+We can use this process to go the other way - if you create a new file in
+Mu, add the line ``print("MicroPython is pretty neat")`` to it, save it as
+``main.py`` and then drag it from your computer onto your device, then
+every time the device resets, it will now print your message on startup.
 
 
 
