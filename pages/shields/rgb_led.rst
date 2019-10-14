@@ -47,8 +47,7 @@ side with the sockets on the main board and push them together!
    the actual maximum! Note the ``LOLIN`` text over the USB connection.
 
 Now we've got the shield on the board, connect to the board with your USB
-again, and get into the REPL (by connecting to your device in your serial
-terminal software of choice). Now let's run the following commands to get
+again, and get into Mu. Now let's run the following commands to get
 these LEDs lit::
 
     import machine

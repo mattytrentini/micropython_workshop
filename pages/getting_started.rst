@@ -76,21 +76,6 @@ commands using the "for" loop::
         led.on()
         led.off()
 
-Note, that when you are typing this, it will look more like::
-
-    >>> for i in range(10):
-    ...     led.on()
-    ...     led.off()
-    ...
-    ...
-    >>>
-
-That's because the REPL automatically understands that when you indent a
-line, you mean it to be a block of code inside the "for" loop. You have to
-un-indent the last line (by removing the spaces with backspace) to finish this
-command. You can avoid that by using "paste mode" -- press ``ctrl+E``, paste
-your code, and then press ``ctrl+D`` to have it executed.
-
 What happened? Nothing interesting, the LED just shines like it did. That's
 because the program blinked that LED as fast as it could -- so fast, that we
 didn't even see it. We need to make it wait a little before the blinks, and for

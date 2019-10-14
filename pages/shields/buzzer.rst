@@ -37,8 +37,7 @@ and push them together!
    Note the large black component over the USB connection
 
 Now we've got the shield on the board, connect to the board with your USB
-again, and get into the REPL (by connecting to your device in your serial
-terminal software of choice). Now before we start using the buzzer...
+again, and get into Mu. Now before we start using the buzzer...
 
 .. WARNING::
    When we use the buzzer, we tell it to produce a set frequency - it will keep
