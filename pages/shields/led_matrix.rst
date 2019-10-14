@@ -21,10 +21,10 @@ developed, and so we can use this to easily control the matrix in MicroPython.
 This ``tmp1640.py`` file from this should already be loaded onto your Wemos
 D1 Mini boards, so you should be set to get started!
 
-.. _MicroPython TM1640 driver: https://github.com/mcauser/micropython-tm1640
+.. _MicroPython TM1640 driver: https://github.com/mattytrentini/micropython-tm1640
 
-Enter the Matrix
-================
+Plugging in
+===========
 
 In order to start working with the LED matrix, we'll need to connect the shield
 to the Wemos D1 Mini board itself. If there is already a shield connected to
@@ -36,6 +36,9 @@ either side with the sockets on the main board and push them together!
 .. figure:: /images/led_matrix_shield_connected.png
 
    Note the ``LOLIN`` text over the USB connection
+
+Enter the Matrix
+================
 
 Now we've got the shield on the board, connect to the board with your USB
 again, and get into the REPL (by connecting to your device in your serial
@@ -93,8 +96,29 @@ the matrix in your code, you could format it like so::
         0b00000000,
     ])
 
-The last thing we have the ability to do is write a `MicroPython frame buffer`_
-to the device (treating it like an 8x8 monochrome display). This is done like
+Blue pill, red pill
+===================
+
+Now that you know how to light up LEDs individually, it's time to learn
+about some convenience functions that can help display *text*.
+
+Let's display a letter on the matrix::
+
+    tm1640.display_letter(tm, "X")
+
+And, for the pièce de résistance::
+
+    tm1640.scroll_text(tm, "Scrolling for days...")
+
+These are enabled by using a *FrameBuffer*, a module built-in to MicroPython
+that provides a general - and efficient! - way to draw onto an in-memory
+'canvas'.
+
+Advanced: FrameBuffer
+=====================
+
+A flexible way to control the LEDs in the matrix is by using a
+`MicroPython frame buffer`_. This is done like
 so::
 
     # Instantiate our 8x8 frame buffer
@@ -128,20 +152,39 @@ Time to take those concepts and put them into action! The following subsections
 detail different exercises that can be accomplished using the techniques
 covered so far.
 
-TODO 1
-------
+Exercise 1: Wake up, Neo
+------------------------
 
-Description of exercise 1! FIXME!
+Implement a simple countdown timer.
 
-Hint: You can use ``something()`` to do something! FIXME!
+Ask the user for a duration in seconds. Count down from that time, scrolling
+the number past until 0 is reached, then display an asterix and *invert* it
+every half second to indicate an alarm is occurring.
 
-Extension: Make it do something else! FIXME!
+Extension: Also use the buzzer and button shields - beep with each passing
+second, buzz when 0 is reached and use the button to stop the alarm.
 
-TODO 2
-------
 
-Description of exercise 2! FIXME!
+Exercise 2: Be still my beating heart
+-------------------------------------
 
-Hint: You can use ``something()`` to do something! FIXME!
+Display an image of a heart on the LED matrix.
 
-Extension: Make it do something else! FIXME!
+Now, *animate* it, by displaying different sized hearts in rapid succession.
+
+Extension: Use a buzzer shield (with a 2UP board) to beep in time with the
+heart.
+
+Exercise 3: Lo-fi Charting
+--------------------------
+
+Render a *simple* chart.
+
+Use the following data::
+
+    data = [100, 130, 160, 160, 250, 180, 150, 100]
+
+Scale it appropriately (so the maximum data is display with the topmost LED).
+
+Extension: Provide an option to fill all the LEDs below (more like a bar
+chart).

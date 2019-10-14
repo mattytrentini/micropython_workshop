@@ -122,6 +122,6 @@ Rapidly cycle through LED combinations representing the six sides of a
 Hint: You can use ``random.getrandbits(n)`` from the ``random`` module to
 generate ``n`` random bits!
 
-Extentsion: Add a signal to show when the face has stopped changing --
+Extension: Add a signal to show when the face has stopped changing --
 maybe a colour change, or a sequence of flashing (or whatever else takes
 your fancy!).
