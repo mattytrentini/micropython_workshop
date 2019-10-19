@@ -20,8 +20,10 @@ Contents:
    pages/shields/ambient_light.rst
    pages/shields/pir.rst
    pages/shields/infrared.rst
+   pages/shields/oled.rst
    pages/network.rst
    pages/mqtt.rst
+   pages/core/i2c.rst
 
 Indices and tables
 ==================
