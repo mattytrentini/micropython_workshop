@@ -20,33 +20,30 @@ the ``D4`` pin low", or in other words, make it connected to ``gnd``. Let's try
 that::
 
     from machine import Pin
-    import wemos
+    import d1_mini
 
-    led = Pin(wemos.LED, Pin.OUT)
+    led = Pin(d1_mini.LED, Pin.OUT)
     led.off()
 
 The first line "imports" the "Pin" function from the "machine" module. In
 Python, to use any libraries, you first have to import them. The "machine"
 module contains most of the hardware-specific functions in Micropython.
 
-The second line imports a helper "wemos" module that provides the pin
+The second line imports a helper "d1_mini" module that provides the pin
 mappings to easily interact with specific pins on the board. Each of the
 digital pins (``Dx``) on the board can be found in this module, as well as
-some hardware-role-specific pins (such as those used for `I2C`_ or `SPI`_
-communications). Note that this module is specifically for the Wemos D1 Mini -
-if you were to use a different board, you would likely need a different helper
-module!
+some hardware-role-specific pins (such as those used for :ref:`I2C` or `SPI`_
+communications). Note that this module is specifically for D1 Mini form factor
+boards, such as the Wemos D1 Mini and the TTGO MINI 32 - if you were to use a
+different board, you would likely need a different helper module!
 
-.. _I2C: https://learn.sparkfun.com/tutorials/i2c/all
 .. _SPI: https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi/all
 
 Once we have the "Pin" function imported, we use it to create a pin object,
 with the first parameter telling it to use the ``LED`` value from our helper
 module, and the second parameter telling it to switch it into output mode
 (instead of the input mode it would default to otherwise). Once
-created, the pin is assigned to the variable we called "led". ``D4`` is also
-connected to the LED, and can also be found in the ``wemos`` module - you can
-see that they're the same by running ``wemos.LED == wemos.D4`` in the REPL.
+created, the pin is assigned to the variable we called "led".
 
 Finally, we bring the pin low, by calling the "off" method on the "led"
 variable. At this point the LED should start shining. It may seem confusing
@@ -97,8 +94,8 @@ Now the LED should turn on and off every half second!
 Networking
 ==========
 
-One of the exciting features of the ESP8266 microcontroller (the heart of the
-WEMOS D1 Mini board) is built-in Wi-Fi. While Wi-Fi itself may be a complicated
+One of the exciting features of the ESP32 microcontroller (the heart of the
+TTGO MINI 32) is built-in Wi-Fi. While Wi-Fi itself may be a complicated
 beast, luckily for us MicroPython makes it simple to use! First of all lets
 connect to the network::
 

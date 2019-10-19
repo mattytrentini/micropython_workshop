@@ -7,7 +7,7 @@ Buzzer Shield
 .. figure:: /images/buzzer_shield_top.png
    :width: 270
 
-The Buzzer Shield is a Wemos D1 Mini shield, featuring a buzzer which can be
+The Buzzer Shield is a D1 Mini form factor shield, featuring a buzzer which can be
 used for generating sounds.
 
 The buzzer is controlled by simply toggling the appropriate pin at the specific
@@ -25,12 +25,12 @@ Make Some Noise
 ===============
 
 In order to start working with the buzzer, we'll need to connect the shield
-to the Wemos D1 Mini board itself. If there is already a shield connected to
-your board (such as the LED Matrix shield from the previous section), then
-first remove this. Then plug the buzzer shield into the board -- the large,
-black component (the buzzer!) should be over the USB port of the main board.
-Then simply align the 8 pins on either side with the sockets on the main board
-and push them together!
+to our TTGO board. If there is already a shield connected to your board (such
+as the LED Matrix shield from the previous section), then first remove this.
+Then plug the buzzer shield into the board -- the large, black component (the
+buzzer!) should be over the USB port of the main board. Then simply align the
+8 pins on either side with the sockets on the main board and push them
+together!
 
 .. figure:: /images/buzzer_shield_connected.png
 
@@ -51,9 +51,9 @@ again, and get into Mu. Now before we start using the buzzer...
 Now that we've got that out of the way, lets make some noise::
 
     import machine
-    import wemos
+    import d1_mini
     import time
-    buzzer_pin = machine.Pin(wemos.D6, machine.Pin.OUT)
+    buzzer_pin = machine.Pin(d1_mini.D6, machine.Pin.OUT)
     buzzer = machine.PWM(buzzer_pin)
     buzzer.freq(1000)
     buzzer.duty(10)
@@ -65,7 +65,7 @@ then stopped! Now lets run through what we just did:
 
 - Imported the MicroPython ``machine`` module -- we need this to configure our
   pin to control the buzzer
-- Imported our ``wemos`` module -- we need this to get the pin information to
+- Imported our ``d1_mini`` module -- we need this to get the pin information to
   then configure the correct pin to use for the buzzer
 - Imported the MicroPython ``time`` module -- we're going to use this to add
   delays to the code
