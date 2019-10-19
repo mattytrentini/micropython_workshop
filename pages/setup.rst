@@ -49,7 +49,7 @@ Other Shields will be available for use during the workshop (but at lower
 numbers, sharing is caring!).
 
 The firmware that is flashed on the boards is also available at
-https://micropython.org/download#esp8266
+https://micropython.org/download#esp32
 
 
 Development Board

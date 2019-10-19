@@ -13,10 +13,10 @@ will try to build that.
 
 The boards you have actually have a light built-in, so we can use that. There
 is an LED (light-emitting diode) near the centre of the board. The plus
-side of that LED is connected to the ``3v3`` pins internally, and the minus
-side is connected to ``D4``. So we should be able to make that LED shine with
-our program by making ``D4`` behave like the ``gnd`` pins. We need to "bring
-the ``D4`` pin low", or in other words, make it connected to ``gnd``. Let's try
+side of that LED is connected to the ``3V3`` pins internally, and the minus
+side is connected to ``D1``. So we should be able to make that LED shine with
+our program by making ``D1`` behave like the ``GND`` pins. We need to "bring
+the ``D1`` pin low", or in other words, make it connected to ``GND``. Let's try
 that::
 
     from machine import Pin
@@ -56,7 +56,7 @@ is enabled.
 Now, how to make the LED stop shining? There are two ways. We could switch it
 back into "input" mode, where the pin is not connected to anything. Or we could
 turn the microcontroller pin "on". If we do that, both ends of the LED will be
-connected to ``3v3``, and the current won't flow. We do that with::
+connected to ``3V3``, and the current won't flow. We do that with::
 
     led.on()
 
