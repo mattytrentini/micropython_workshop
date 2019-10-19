@@ -9,7 +9,7 @@ LED Matrix Shield
 
    LED Matrix Shield, with row and bit ordering annotated
 
-The LED Matrix Shield is a Wemos D1 Mini shield, featuring an 8x8 LED Matrix
+The LED Matrix Shield is a D1 Mini form factor shield, featuring an 8x8 LED Matrix
 of red LEDs.
 
 The shield has a TM1640 LED matrix driver on it that means we
@@ -18,8 +18,8 @@ send it a command with the LEDs we want enabled and it makes it happen!
 
 Further to this, there's a `MicroPython TM1640 driver`_ that has already been
 developed, and so we can use this to easily control the matrix in MicroPython.
-This ``tmp1640.py`` file from this should already be loaded onto your Wemos
-D1 Mini boards, so you should be set to get started!
+This ``tmp1640.py`` file from this should already be loaded onto your TTGO
+board, so you should be set to get started!
 
 .. _MicroPython TM1640 driver: https://github.com/mattytrentini/micropython-tm1640
 
@@ -27,11 +27,11 @@ Plugging in
 ===========
 
 In order to start working with the LED matrix, we'll need to connect the shield
-to the Wemos D1 Mini board itself. If there is already a shield connected to
-your board (such as the RGB LED shield from the previous section), then first
-remove this. Then plug the LED Matrix shield into the board - the "LOLIN" label
-should be over the USB port of the main board. Then simply align the 8 pins on
-either side with the sockets on the main board and push them together!
+to your TTGO board. If there is already a shield connected to your board (such
+as the RGB LED shield from the previous section), then first remove this. Then
+plug the LED Matrix shield into the board - the "LOLIN" label should be over
+the USB port of the main board. Then simply align the 8 pins on either side
+with the sockets on the main board and push them together!
 
 .. figure:: /images/led_matrix_shield_connected.png
 
@@ -46,9 +46,9 @@ terminal software of choice). Now let's run the following commands to get
 these LEDs lit::
 
     import machine
-    import wemos
+    import d1_mini
     import tm1640
-    tm = tm1640.TM1640(clk=machine.Pin(wemos.D5), dio=machine.Pin(wemos.D7))
+    tm = tm1640.TM1640(clk=machine.Pin(d1_mini.D5), dio=machine.Pin(d1_mini.D7))
     tm.write([255,255,255,255,255,255,255,255])  # 255 = 0b11111111
 
 Now all LEDs on the LED Matrix should be illuminated! Now lets run through what
@@ -56,7 +56,7 @@ we just did:
 
 - Imported the MicroPython ``machine`` module -- we need this to configure our
   pins before passing them to our ``tm1640`` driver
-- Imported our ``wemos`` module -- we need this to get the pin information to
+- Imported our ``d1_mini`` module -- we need this to get the pin information to
   then configure the correct pins for communicating with the LED Matrix driver
   chip
 - Imported the ``tm1640`` module -- this is the MicroPython driver that will

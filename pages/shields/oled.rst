@@ -9,8 +9,8 @@ OLED Shield
 
    OLED Shield
 
-The `OLED Shield`_ is a Wemos D1 Mini shield that hosts a *tiny* 17mm 64x48
-monochrome OLED display.
+The `OLED Shield`_ is a D1 Mini form factor shield that hosts a *tiny* 17mm
+64x48 monochrome OLED display.
 
 .. NOTE::
 
@@ -57,10 +57,10 @@ OLED. First though, the display needs to be initialised. Let's work through
 an example::
 
     from machine import Pin, I2C
-    import wemos
+    import d1_mini
     import ssd1306
 
-    i2c = I2C(-1, scl=Pin(wemos.SCL), sda=Pin(wemos.SDA))
+    i2c = I2C(-1, scl=Pin(d1_mini.SCL), sda=Pin(d1_mini.SDA))
 
     width, height = 64, 48
     oled = ssd1306.SSD1306_I2C(width, height, i2c)

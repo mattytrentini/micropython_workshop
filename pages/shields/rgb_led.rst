@@ -23,7 +23,7 @@ Light Those LEDs
 ================
 
 In order to start working with the LEDs, we'll need to connect the shield to
-the Wemos D1 Mini board itself! But first...
+your TTGO board! But first...
 
 .. WARNING::
    The LEDs on this shield are incredibly bright at full brightness! Do not
@@ -51,16 +51,16 @@ again, and get into Mu. Now let's run the following commands to get
 these LEDs lit::
 
     import machine
-    import wemos
+    import d1_mini
     import neopixel
-    np = neopixel.NeoPixel(machine.Pin(wemos.D4), 7)
+    np = neopixel.NeoPixel(machine.Pin(d1_mini.D4), 7)
     np.fill((25,25,25))
     np.write()
 
 Now all of your LEDs should be illuminated white! Now lets run down what we
 just did:
 
-- Imported our ``wemos`` module -- we need this to set the pin that is used for
+- Imported our ``d1_mini`` module -- we need this to set the pin that is used for
   communicating with the LEDs
 - Imported the ``neopixel`` module -- this is the driver that knows how to talk
   to the NeoPixels

@@ -41,7 +41,7 @@ To participate in the workshop, you will need the following:
 .. _build from source: https://mu.readthedocs.io/en/latest/#quickstart
 
 In addition, at the workshop, you will receive:
-  * "WEMOS D1 Mini" development board (with an ESP8266 at the heart of it)
+  * "TTGO MINI 32" development board (with an ESP32 at the heart of it)
   * RGB LED Shield
   * LED Matrix Shield
 
@@ -49,51 +49,43 @@ Other Shields will be available for use during the workshop (but at lower
 numbers, sharing is caring!).
 
 The firmware that is flashed on the boards is also available at
-https://micropython.org/download#esp8266
+https://micropython.org/download#esp32
 
 
 Development Board
 =================
 
-The board we are using is called a "WEMOS D1 Mini" which has an ESP8266 module
+The board we are using is called a "TTGO MINI 32" which has an ESP32 module
 on it, which we will be programming. It comes with the latest version of
 MicroPython already setup on it, together with all the drivers we are going
 to use.
 
 .. note::
-    The D0, D1, D2, ... numbers printed on the board are different from what
-    MicroPython uses -- because originally those boards were made for a
-    different software. Make sure to refer to the image below to determine
-    which pins are which.
+    The numbers printed next to the pins on the bottom of the board are
+    different from what we're going to be using - this is because the shields
+    we're using have a different pin numbering scheme (which can be seen
+    printed on the shields next to the pins). We're going to use a module to
+    map these, so we can just use the pin names the shields use.
 
-.. image:: /images/wemos_d1_mini_top.PNG
+On top it has a micro-USB socket, for connecting to the computer. On the side
+is a reset button. Then on each side of the board are two rows of pins - the
+inside row of which we will be connecting the shields to.
 
+There are many symbols next to the pins on the underside of the board. The
+numbers are pin numbers we can use to control those particular pins. Some of
+the other important symbols are as follows:
 
-On top it has a micro-USB socket, for connecting to the computer. Next to it
-is a reset button. Then on both sides of the
-board are two rows of pins, to which we will be connecting the shields.
-
-The symbols meaning is as follows:
-
-  * ``3v3`` - this is a fancy way to write 3.3V, which is the voltage that the
+  * ``3V3`` - this is a fancy way to write 3.3V, which is the voltage that the
     board runs on internally. You can think about this pin like the plus side
     of a battery. There are several pins like this, they are all connected
     inside.
-  * ``gnd`` - this is the ground. Think about it like the minus side of the
+  * ``GND`` - this is the ground. Think about it like the minus side of the
     battery. They are also all connected.
-  * ``Dx`` - These are "Digital" pins, or "GPIO"s (which stands for "General
-    Purpose Input Output"). Those are the pins we will be using for sending and
-    receiving signals to and from various devices that we will connect to them.
-    They can act as output -- pretty much like a switch that you can connect to
-    plus or to minus with your program.  Or they can act as input, telling your
-    program whether they are connected to plus or minus.
-  * ``A0`` - this is the analog pin. It can measure the voltage that is applied
-    to it, but it can only handle up to 1V.
-  * ``5v0`` - this pin is connected with the 5V from your computer. You can
+  * ``5V`` - this pin is connected with the 5V from your computer. You can
     also use it to power your board with a battery when it's not connected to
     the computer. The voltage applied here will be internally converted to the
     3.3V that the board needs.
-  * ``RX`` / ``TX`` - these are connected to the UART port used for device
+  * ``RXD`` / ``TXD`` - these are connected to the UART port used for device
     communications. This UART port is the one also used by the USB to
     ommunicate with the device from your PC, so don't connect anything to these
     pins or your USB communications might have problems!
@@ -114,7 +106,7 @@ the window shows the version as Mu 1.1.0.alpha (or later). If you've selected
 another option (or used Mu for something else previously) then press the Mode
 button to bring the selection menu up again.
 
-Now plug your Wemos D1 Mini into your laptop via the Micro USB cable, and you
+Now plug your TTGO MINI 32 into your laptop via the Micro USB cable, and you
 should see a "Detected new ESP MicroPython device" message in the bottom left
 and corner of the Mu window (note: this could take a couple of minutes if it
 is the first time you're plugging the device in, especially if you're on
@@ -187,7 +179,7 @@ the same time - if the button for what you want is disabled, something is
 probably already open and taking up the real estate.
 
 For an example of file browser utility, if you retrieve and open the
-``wemos.py`` file that we're going to use during the workshop for shield
+``d1_mini.py`` file that we're going to use during the workshop for shield
 interaction, you will see that there is no magic there, just mapping numbers to
 more human-comprehensible names.
 
@@ -202,7 +194,7 @@ Official Documentation and Support
 ==================================
 
 The official documentation for this port of MicroPython is available at
-http://docs.micropython.org/en/latest/esp8266/quickref.html.
+http://docs.micropython.org/en/latest/esp32/quickref.html.
 
 There is a also a forum on which you can ask questions and get help, located at
 http://forum.micropython.org/.

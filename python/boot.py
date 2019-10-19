@@ -10,7 +10,7 @@ import machine
 import gc
 
 # For RGB LED control
-import wemos
+import d1_mini
 import neopixel
 
 # import webrepl
@@ -18,7 +18,7 @@ import neopixel
 gc.collect()
 
 # Default to RGB LED shield being disabled (if connected)
-np = neopixel.NeoPixel(machine.Pin(wemos.D4), 7)
+np = neopixel.NeoPixel(machine.Pin(d1_mini.D4), 7)
 np.fill((0, 0, 0))
 np.write()
 del np
