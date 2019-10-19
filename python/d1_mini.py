@@ -5,7 +5,7 @@
 
 from sys import platform
 
-if platform == 'esp8266':
+if platform == "esp8266":
     D0 = 16
     D1 = SCL = 5
     D2 = SDA = 4
@@ -16,7 +16,7 @@ if platform == 'esp8266':
     D7 = MOSI = 13
     D8 = SS = CS = 15  # 10k pull-down
 
-elif platform == 'esp32':
+elif platform == "esp32":
     D0 = 26
     D1 = SCL = LED = 22
     D2 = SDA = 21
@@ -28,4 +28,4 @@ elif platform == 'esp32':
     D8 = SS = CS = 5
 
 else:
-    raise NotImplementedError('Unknown platform! No pin definitions created!')
+    raise NotImplementedError("Unknown platform! No pin definitions created!")
