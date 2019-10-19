@@ -24,13 +24,13 @@ and display text.
 
 The *integrated circuit* that makes the magic happen is an `SSD1306`_. It sits
 between the microcontroller and the raw display and allows us to send commands
-to make stuff appear. Because the SSD1306 is a common chip there is a driver
-for it built-in to MicroPython.
+to make stuff appear. The SSD1306 is a common chip and so a driver for it is
+built-in to MicroPython.
 
 Let's see how it works!
 
 .. _OLED Shield: https://wiki.wemos.cc/products:retired:oled_shield_v1.1.0
-.. _SSD1306: http://bleah.com
+.. _SSD1306: http://www.solomon-systech.com/en/product/advanced-display/oled-display-driver-ic/ssd1306/
 
 Plug me in
 ==========
@@ -45,11 +45,9 @@ into the microcontroller. Take care with orientation:
 Techy details, I squared C?
 ===========================
 
-The SSD1306 is controlled by sending *I2C data* at it. What's I2C? It's not
-critical to know to use the OLED Shield but if you'd like to know more take
-a look at I2C_.
-
-*[Update: how to link to the I2C page?]*
+The SSD1306 is controlled by sending *I2C data* at it. What's I2C? It's a
+communications protocol, but it's not critical to know more than that to use
+the OLED Shield. If you would like to know more, take a look at :ref:`I2C`.
 
 Drawing
 =======
@@ -59,9 +57,10 @@ OLED. First though, the display needs to be initialised. Let's work through
 an example::
 
     from machine import Pin, I2C
+    import wemos
     import ssd1306
 
-    i2c = I2C(-1, scl=Pin(5), sda=Pin(4))
+    i2c = I2C(-1, scl=Pin(wemos.SCL), sda=Pin(wemos.SDA))
 
     width, height = 64, 48
     oled = ssd1306.SSD1306_I2C(width, height, i2c)
@@ -114,7 +113,7 @@ Exercises
 Exercise 1: Spirals for days
 ----------------------------
 
-Render a square-endged spiral using ``hline`` and ``vline``:
+Render a square-edged spiral using ``hline`` and ``vline``:
 
 .. figure:: /images/oled_shield_top.png
    :width: 270

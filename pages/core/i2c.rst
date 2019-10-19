@@ -1,3 +1,5 @@
+.. _I2C:
+
 I2C
 ***
 
@@ -7,8 +9,8 @@ I2C
 .. figure:: /images/i2c-overview.png
    :width: 270
 
-This is a placeholder to describe I2C. In the meantime the following links
-may be useful:
+.. This is a placeholder to describe I2C. In the meantime the following links
+   may be useful:
 
 - The `MicroPython I2C docs`_ explain how to send I2C commands
 - `Wikipedia`_ has a thorough explanation of I2C
