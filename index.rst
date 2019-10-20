@@ -16,12 +16,12 @@ Contents:
    pages/getting_started.rst
    pages/shields/rgb_led.rst
    pages/shields/led_matrix.rst
+   pages/shields/button.rst
    pages/shields/buzzer.rst
-   pages/shields/ambient_light.rst
+   pages/shields/oled.rst
    pages/shields/pir.rst
    pages/shields/infrared.rst
-   pages/shields/oled.rst
-   pages/network.rst
+   pages/shields/ambient_light.rst
    pages/mqtt.rst
    pages/core/i2c.rst
 

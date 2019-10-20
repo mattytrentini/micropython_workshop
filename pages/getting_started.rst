@@ -129,6 +129,8 @@ internet!
 
 .. _`MicroPython WLAN documentation`: http://docs.micropython.org/en/latest/library/network.WLAN.html
 
+.. _`Internet Requests`:
+
 This Jen, is The Internet
 =========================
 
