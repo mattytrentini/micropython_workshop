@@ -55,8 +55,8 @@ Now that we've got that out of the way, lets make some noise::
     import time
     buzzer_pin = machine.Pin(d1_mini.D6, machine.Pin.OUT)
     buzzer = machine.PWM(buzzer_pin)
-    buzzer.freq(1000)
-    buzzer.duty(10)
+    buzzer.freq(1047)
+    buzzer.duty(50)
     time.sleep(1)
     buzzer.duty(0)
 
@@ -72,11 +72,11 @@ then stopped! Now lets run through what we just did:
 - Created an object that controls pin connected to the buzzer, and set it as an
   output (as we will be `driving` the buzzer)
 - Created a new object that gives us PWM control over the buzzer pin
-- Set the PWM frequency to 1000 herts, or 1kHz -- note that this does not
+- Set the PWM frequency to 1047 hertz -- note that this does not
   generate any noise by itself, as the PWM defaults to having a duty cycle of 0
   (that is, it is enabled 0% of each cycle)
-- Set the PWM duty cycle to 10 -- the duty cycle is a 10 bit number (has a
-  maximum of 1023) so by setting it to 10, it will be enabled roughly 1% of
+- Set the PWM duty cycle to 50 -- the duty cycle is a 10 bit number (has a
+  maximum of 1023) so by setting it to 50, it will be enabled roughly 5% of
   the time. This is what makes it buzz!
 - Delays code execution by 1 second -- this gives us an opportunity to hear it
   buzzing
@@ -86,11 +86,11 @@ then stopped! Now lets run through what we just did:
 A couple of the numbers in here may seem a tad arbitrary, so lets explain them
 a bit better.
 
-We used a frequency of 1000 because the buzzer has a peak frequency response
-between 1 and 3 kHz -- this is the area where it provides the best results.
-It will still work outside this range however!
+We used a frequency of 1047 because this is a nice "C" note and the buzzer has
+a peak frequency response between 1 and 3 kHz -- this is the area where it
+provides the best results. It will still work outside this range however!
 
-We used a duty cycle of 10 to reduce the volume of the sound output. Peak
+We used a duty cycle of 50 to reduce the volume of the sound output. Peak
 volume is at 50% duty cycle (setting of ~512), however due to the
 logarithmic nature of sound, we only need a small amount of this to make a
 relatively loud buzz. Because the buzzer generates sounds by alternating the
@@ -98,51 +98,46 @@ voltage over the diaphragm, moving closer to 100% duty cycle has the same
 effect as being close to 0% duty cycle. Feel free to try buzzing at 50% duty
 cycle to see why we reduced the output!
 
-Being able to make `a` sound is nice, but it would be even nicer to make a
-`nice` sound. First of all, lets define the frequencies of some specific
+Being able to make *a* sound is nice, but it would be even nicer to make a
+*nice* sound. First of all, lets define the frequencies of some specific
 notes::
 
-    C4  = 262
-    CS4 = 277
-    D4  = 294
-    DS4 = 311
-    E4  = 330
-    F4  = 349
-    FS4 = 370
-    G4  = 392
-    GS4 = 415
-    A4  = 440
-    AS4 = 466
-    B4  = 494
-    C5  = 523
-    CS5 = 554
-    D5  = 587
-    DS5 = 622
-    E5  = 659
-    F5  = 698
-    FS5 = 740
-    G5  = 784
-    GS5 = 831
-    A5  = 880
-    AS5 = 932
-    B5  = 988
+    C6  = 1047
+    CS6 = 1109
+    D6  = 1175
+    DS6 = 1245
+    E6  = 1319
+    F6  = 1397
+    FS6 = 1480
+    G6  = 1568
+    GS6 = 1661
+    A6  = 1760
+    AS6 = 1865
+    B6  = 1976
+    C7  = 2093
+    CS7 = 2217
+    D7  = 2349
+    DS7 = 2489
+    E7  = 2637
+    F7  = 2794
+    FS7 = 2960
+    G7  = 3136
+    GS7 = 3322
+    A7  = 3520
+    AS7 = 3729
+    B7  = 3951
 
 These are taken from the `Pyboard "Play Tone" page`_ -- you will see that there
 are more notes on that page. We're not defining the lower range as two
-octaves will serve us fine, and we're not defining any higher notes because we
-can't use them! Unfortunately the maximum PWM frequency on the ESP8266 (the
-microcontroller that is running on our Wemos D1 Mini) is 1 kHz. If we upgraded
-to an `ESP32`_ based board (the next microcontroller in the family) then we
-wouldn't have this limitation, but it would cost a bit more.
+octaves covering our peak frequency response will serve us fine.
 
 .. _`Pyboard "Play Tone" page`: http://wiki.micropython.org/Play-Tone
-.. _`ESP32`: https://www.espressif.com/en/products/hardware/esp32/overview
 
 Now lets create a function that will allow us to play a song by passing it a
 buzzer object, a list of notes, the delay between each note, and an optional
 duty cycle to use when playing a note::
 
-    def play(buz, notes, delay, active_duty=10):
+    def play(buz, notes, delay, active_duty=50):
         for note in notes:
             if note == 0:  # Special case for silence
                 buz.duty(0)
@@ -156,16 +151,16 @@ To put it into action, lets create a song by defining a list of notes, and then
 ``play()`` it::
 
     song = [
-         E5, E5,  0, E5,  0, C5, E5,  0,
-         G5,  0,  0,  0, G4,  0,  0,  0,
-         C5,  0,  0, G4,  0,  0, E4,  0,
-          0, A4,  0, B4,  0,AS4, A4,  0,
-         G4, E5,  0, G5, A5,  0, F5, G5,
-          0, E5,  0, C5, D5, B4,  0,  0,
-         C5,  0,  0, G4,  0,  0, E4,  0,
-          0, A4,  0, B4,  0,AS4, A4,  0,
-         G4, E5,  0, G5, A5,  0, F5, G5,
-          0, E5,  0, C5, D5, B4,  0,  0,
+         E7, E7,  0, E7,  0, C7, E7,  0,
+         G7,  0,  0,  0, G6,  0,  0,  0,
+         C7,  0,  0, G6,  0,  0, E6,  0,
+          0, A6,  0, B6,  0,AS6, A6,  0,
+         G6, E7,  0, G7, A7,  0, F7, G7,
+          0, E7,  0, C7, D7, B6,  0,  0,
+         C7,  0,  0, G6,  0,  0, E6,  0,
+          0, A6,  0, B6,  0,AS6, A6,  0,
+         G6, E7,  0, G7, A7,  0, F7, G7,
+          0, E7,  0, C7, D7, B6,  0,  0,
     ]
     play(buzzer, song, 0.15)
 
