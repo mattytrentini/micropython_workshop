@@ -38,7 +38,8 @@ Plug me in
 As with all the other shields, the first thing to do is plug the OLED shield
 into the microcontroller. Take care with orientation:
 
-.. figure:: /images/oled_shield_top.png
+.. figure:: /images/oled_shield_connected.jpg
+   :width: 270
 
    OLED Shield, plugged in correctly *[Update picture!]*
 

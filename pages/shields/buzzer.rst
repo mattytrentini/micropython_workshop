@@ -32,7 +32,8 @@ buzzer!) should be over the USB port of the main board. Then simply align the
 8 pins on either side with the sockets on the main board and push them
 together!
 
-.. figure:: /images/buzzer_shield_connected.png
+.. figure:: /images/buzzer_shield_connected.jpg
+   :width: 270
 
    Note the large black component over the USB connection
 
