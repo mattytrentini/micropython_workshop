@@ -41,7 +41,8 @@ pay attention to the orientation of the shield - the "LOLIN" label should be
 over the USB port of the main board. Then simply align the 8 pins on either
 side with the sockets on the main board and push them together!
 
-.. figure:: /images/rgb_led_shield_connected.png
+.. figure:: /images/rgb_led_shield_connected.jpg
+   :width: 270
 
    This image was taken with maximum values for the LEDs capped at 25 - 10% of
    the actual maximum! Note the ``LOLIN`` text over the USB connection.

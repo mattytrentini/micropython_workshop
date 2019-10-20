@@ -33,7 +33,8 @@ plug the LED Matrix shield into the board - the "LOLIN" label should be over
 the USB port of the main board. Then simply align the 8 pins on either side
 with the sockets on the main board and push them together!
 
-.. figure:: /images/led_matrix_shield_connected.png
+.. figure:: /images/led_matrix_shield_connected.jpg
+   :width: 270
 
    Note the ``LOLIN`` text over the USB connection
 
