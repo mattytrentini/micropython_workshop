@@ -43,7 +43,6 @@ To participate in the workshop, you will need the following:
 In addition, at the workshop, you will receive:
   * "TTGO MINI 32" development board (with an ESP32 at the heart of it)
   * RGB LED Shield
-  * LED Matrix Shield
 
 Other Shields will be available for use during the workshop (but at lower
 numbers, sharing is caring!).
