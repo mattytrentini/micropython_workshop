@@ -28,13 +28,13 @@ connected to the microcontroller to extend functionality in interesting ways
 such as by illuminating LEDs, connecting sensors and buttons for input, or
 outputting to displays.
 
-The shields are build for a developer board called the *Wemos D1*,
+The shields are built for a developer board called the *Wemos D1 Mini*,
 originally built around an ESP8266 microcontroller. These boards became
 very popular and so shields for them are readily available and inexpensive.
 Instead of the original ESP8266 board, a much more powerful microcontroller -
 an ESP32 - was chosen for this workshop. The development board is known as
-the *TTGO Mini 32* board was chosen and it matches the pin layout of the
-Wemos D1 so all the existing shields can be used.
+the *TTGO Mini 32* board and it matches the pin layout of the Wemos D1 Mini
+so all the existing shields can be used.
 
 Shields are *perfect* for a starter workshop since there's no need
 to solder components together or even use a breadboard. Just plug the shield
