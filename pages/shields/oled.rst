@@ -35,6 +35,8 @@ Let's see how it works!
 Plug me in
 ==========
 
+.. include:: disconnect.rst
+
 As with all the other shields, the first thing to do is plug the OLED shield
 into the microcontroller. Take care with orientation:
 

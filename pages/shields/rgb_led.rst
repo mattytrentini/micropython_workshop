@@ -25,6 +25,8 @@ Light Those LEDs
 In order to start working with the LEDs, we'll need to connect the shield to
 your TTGO board! But first...
 
+.. include:: disconnect.rst
+
 .. WARNING::
    The LEDs on this shield are incredibly bright at full brightness! Do not
    look directly at the LEDs if they're at a higher brightness, or you don't

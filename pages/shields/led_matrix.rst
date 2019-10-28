@@ -26,6 +26,8 @@ board, so you should be set to get started!
 Plugging in
 ===========
 
+.. include:: disconnect.rst
+
 In order to start working with the LED matrix, we'll need to connect the shield
 to your TTGO board. If there is already a shield connected to your board (such
 as the RGB LED shield from the previous section), then first remove this. Then

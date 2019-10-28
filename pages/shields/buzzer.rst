@@ -24,6 +24,8 @@ we can set it up and control it using the `MicroPython PWM function`_.
 Make Some Noise
 ===============
 
+.. include:: disconnect.rst
+
 In order to start working with the buzzer, we'll need to connect the shield
 to our TTGO board. If there is already a shield connected to your board (such
 as the LED Matrix shield from the previous section), then first remove this.

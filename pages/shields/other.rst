@@ -4,6 +4,8 @@ Other Shields
 There are a number of other shields that are not yet integrated into the
 workshop documentation but may be encountered.
 
+.. include:: disconnect.rst
+
 Ambient Light
 =============
 
