@@ -123,8 +123,11 @@ Rapidly cycle through LED combinations representing the six sides of a
 (six sided) dice, before slowing down, and ultimately "landing" on one of the
 "sides".
 
-Hint: You can use ``random.getrandbits(n)`` from the ``random`` module to
-generate ``n`` random bits!
+Hint: MicroPython has a cut-down version of the ``random`` module built-in!
+On the ESP32 (the microcontroller on the TTGO 32 Mini) we have access to the
+`Functions for integers`_ from BigPython!
+
+.. _`Functions for integers`: https://docs.python.org/3/library/random.html#functions-for-integers
 
 Extension: Add a signal to show when the face has stopped changing --
 maybe a colour change, or a sequence of flashing (or whatever else takes
