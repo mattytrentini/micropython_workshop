@@ -8,34 +8,38 @@ mix in the coming pages.
 LED Basics
 ==========
 
-The traditional first program for hobby electronics is a blinking light. We
-will try to build that.
+The traditional first program for hobby electronics is a blinking light - so
+let's stick with tradition and try to build that!
 
-The boards you have actually have a light built-in, so we can use that. There
-is an LED (light-emitting diode) near the centre of the board. The plus
-side of that LED is connected to the ``3V3`` pins internally, and the minus
-side is connected to ``D1``. So we should be able to make that LED shine with
-our program by making ``D1`` behave like the ``GND`` pins. We need to "bring
-the ``D1`` pin low", or in other words, make it connected to ``GND``. Let's try
-that::
+The boards you have actually have an LED built-in, so we can use that. It
+actually has three in fact - a red "power" LED, a blue "battery charge" LED,
+and a green LED that we can control (it defaults to off so it may not be easy
+to find until you enable it!).
+
+One side of the green LED is connected to the ``GND`` (0 volts) pin internally,
+and the other side is connected to ``D1``. We should be able to make that LED
+shine with our program by making ``D1`` behave like the ``3V3`` (3.3 volt)
+pins. We need to "set the ``D1`` pin high", or in other words, make it
+connected to ``3V3``. Let's try that::
 
     from machine import Pin
     import d1_mini
 
     led = Pin(d1_mini.LED, Pin.OUT)
-    led.off()
+    led.on()
 
 The first line "imports" the "Pin" function from the "machine" module. In
 Python, to use any libraries, you first have to import them. The "machine"
 module contains most of the hardware-specific functions in Micropython.
 
 The second line imports a helper "d1_mini" module that provides the pin
-mappings to easily interact with specific pins on the board. Each of the
-digital pins (``Dx``) on the board can be found in this module, as well as
-some hardware-role-specific pins (such as those used for :ref:`I2C` or `SPI`_
-communications). Note that this module is specifically for D1 Mini form factor
-boards, such as the Wemos D1 Mini and the TTGO MINI 32 - if you were to use a
-different board, you would likely need a different helper module!
+mappings to easily interact with specific pins on the board. Note that that is
+the number one after the letter ``d``, not a lower case L!
+Each of the digital pins (``Dx``) on the board can be found in this module, as
+well as some hardware-role-specific pins (such as those used for :ref:`I2C` or
+`SPI`_ communications). Note that this module is specifically for D1 Mini form
+factor boards, such as the Wemos D1 Mini and the TTGO MINI 32 - if you were to
+use a different board, you would likely need a different helper module!
 
 .. _SPI: https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi/all
 
@@ -45,27 +49,22 @@ module, and the second parameter telling it to switch it into output mode
 (instead of the input mode it would default to otherwise). Once
 created, the pin is assigned to the variable we called "led".
 
-Finally, we bring the pin low, by calling the "off" method on the "led"
-variable. At this point the LED should start shining. It may seem confusing
-that turning the "LED" off makes the light turn on, but what we need to
-remember is that we're not controlling the LED (at least not directly) - we're
-controlling the microcontroller pin. The microcontroller pin is turning off
-(getting set to zero volts) - but due to the circuitry this means that the LED
-is enabled.
+Finally, we set the pin high, by calling the "on" method on the "led"
+variable. At this point the LED should start shining - exciting!
 
 Now, how to make the LED stop shining? There are two ways. We could switch it
 back into "input" mode, where the pin is not connected to anything. Or we could
-turn the microcontroller pin "on". If we do that, both ends of the LED will be
-connected to ``3V3``, and the current won't flow. We do that with::
+turn the microcontroller pin "off". If we do that, both ends of the LED will be
+connected to ``GND``, and the current won't flow. We do that with::
 
-    led.on()
+    led.off()
 
 
 LED Blinking
 ============
 
 Now, how can we make the LED blink 10 times? We could of course type
-``led.off()`` and ``led.on()`` ten times quickly, but that's a lot of work
+``led.on()`` and ``led.off()`` ten times quickly, but that's a lot of work
 and we have computers to do that for us. We can repeat a command or a set of
 commands using the "for" loop::
 
@@ -113,6 +112,12 @@ attempts to connect to the defined network. The success of this can be checked
 with::
 
     sta_if.isconnected()
+
+Note that ``isconnected()`` will immediately return the current status of the
+network (whether it has connected or not) - if you want your code to pause
+until the network is connected, then it is common to have a ``while`` loop that
+will do nothing until the network connects. Safer implementations will include
+a timeout in the check in case of a missing network!
 
 Once a connection is established, the details of this can be checked with::
 

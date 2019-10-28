@@ -22,6 +22,8 @@ microcontroller and we're good to go!
 Plugging in
 ===========
 
+.. include:: disconnect.rst
+
 In order to start working with the PIR sensor, we'll need to connect the shield
 to your TTGO board. If there is already a shield connected to your board, then
 first remove this. Then plug the button shield into the inner row of pins on

@@ -25,6 +25,8 @@ Light Those LEDs
 In order to start working with the LEDs, we'll need to connect the shield to
 your TTGO board! But first...
 
+.. include:: disconnect.rst
+
 .. WARNING::
    The LEDs on this shield are incredibly bright at full brightness! Do not
    look directly at the LEDs if they're at a higher brightness, or you don't
@@ -55,8 +57,9 @@ these LEDs lit::
     import d1_mini
     import neopixel
     np = neopixel.NeoPixel(machine.Pin(d1_mini.D4), 7)
-    np.fill((25,25,25))
-    np.write()
+    np.fill((25,25,25))  # This just fills the memory of the np object
+                         # The LEDs will not have changed colour yet
+    np.write()  # This is what actually changes the colour of the LEDs
 
 Now all of your LEDs should be illuminated white! Now lets run down what we
 just did:
@@ -120,8 +123,11 @@ Rapidly cycle through LED combinations representing the six sides of a
 (six sided) dice, before slowing down, and ultimately "landing" on one of the
 "sides".
 
-Hint: You can use ``random.getrandbits(n)`` from the ``random`` module to
-generate ``n`` random bits!
+Hint: MicroPython has a cut-down version of the ``random`` module built-in!
+On the ESP32 (the microcontroller on the TTGO 32 Mini) we have access to the
+`Functions for integers`_ from BigPython!
+
+.. _`Functions for integers`: https://docs.python.org/3/library/random.html#functions-for-integers
 
 Extension: Add a signal to show when the face has stopped changing --
 maybe a colour change, or a sequence of flashing (or whatever else takes
