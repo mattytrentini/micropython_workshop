@@ -57,8 +57,9 @@ these LEDs lit::
     import d1_mini
     import neopixel
     np = neopixel.NeoPixel(machine.Pin(d1_mini.D4), 7)
-    np.fill((25,25,25))
-    np.write()
+    np.fill((25,25,25))  # This just fills the memory of the np object
+                         # The LEDs will not have changed colour yet
+    np.write()  # This is what actually changes the colour of the LEDs
 
 Now all of your LEDs should be illuminated white! Now lets run down what we
 just did:
