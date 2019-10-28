@@ -113,6 +113,12 @@ with::
 
     sta_if.isconnected()
 
+Note that ``isconnected()`` will immediately return the current status of the
+network (whether it has connected or not) - if you want your code to pause
+until the network is connected, then it is common to have a ``while`` loop that
+will do nothing until the network connects. Safer implementations will include
+a timeout in the check in case of a missing network!
+
 Once a connection is established, the details of this can be checked with::
 
     sta_if.ifconfig()
