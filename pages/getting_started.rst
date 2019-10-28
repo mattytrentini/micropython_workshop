@@ -30,12 +30,13 @@ Python, to use any libraries, you first have to import them. The "machine"
 module contains most of the hardware-specific functions in Micropython.
 
 The second line imports a helper "d1_mini" module that provides the pin
-mappings to easily interact with specific pins on the board. Each of the
-digital pins (``Dx``) on the board can be found in this module, as well as
-some hardware-role-specific pins (such as those used for :ref:`I2C` or `SPI`_
-communications). Note that this module is specifically for D1 Mini form factor
-boards, such as the Wemos D1 Mini and the TTGO MINI 32 - if you were to use a
-different board, you would likely need a different helper module!
+mappings to easily interact with specific pins on the board. Note that that is
+the number one after the letter ``d``, not a lower case L!
+Each of the digital pins (``Dx``) on the board can be found in this module, as
+well as some hardware-role-specific pins (such as those used for :ref:`I2C` or
+`SPI`_ communications). Note that this module is specifically for D1 Mini form
+factor boards, such as the Wemos D1 Mini and the TTGO MINI 32 - if you were to
+use a different board, you would likely need a different helper module!
 
 .. _SPI: https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi/all
 
