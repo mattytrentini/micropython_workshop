@@ -9,8 +9,9 @@ _static/*
 # Python
 python/ssd1306.py
 python/pyboard.py
+python/uasyncio*
 python/*.bin
-*.pyc
+__pycache__
 
 # Dev env stuff
 venv/
