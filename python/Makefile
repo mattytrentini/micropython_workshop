@@ -24,11 +24,8 @@ erase:
 
 copy:
 	rshell -p $(PORT) mkdir /pyboard/lib
-	rshell -p $(PORT) cp d1_mini.py /pyboard
-	rshell -p $(PORT) cp -r uasyncio/ /pyboard/lib
-	rshell -p $(PORT) cp max7219/max7219.py /pyboard/lib
-	rshell -p $(PORT) cp tm1640/tm1640.py /pyboard/lib
-	rshell -p $(PORT) cp ssd1306.py /pyboard/lib
+	rshell -p $(PORT) cp boot.py d1_mini.py /pyboard
+	rshell -p $(PORT) cp -r uasyncio/ ssd1306.py max7219/max7219.py tm1640/tm1640.py /pyboard/lib
 
 test:
 	python3 install_requirements.py $(PORT)
