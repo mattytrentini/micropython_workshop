@@ -28,7 +28,7 @@ copy:
 	rshell -p $(PORT) cp -r uasyncio/ ssd1306.py max7219/max7219.py tm1640/tm1640.py /pyboard/lib
 
 test:
-	python3 install_requirements.py $(PORT)
+	python3 deploy_test.py $(PORT)
 
 clean:
 	rm -rf uasyncio pyboard.py ssd1306.py
