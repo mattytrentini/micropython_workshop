@@ -62,6 +62,7 @@ Now that we've got that out of the way, lets make some noise::
     buzzer.duty(50)
     time.sleep(1)
     buzzer.duty(0)
+    buzzer.deinit()
 
 If all went well, your buzzer should have made a (1 kHz) beep for 1 second, and
 then stopped! Now lets run through what we just did:
@@ -85,6 +86,12 @@ then stopped! Now lets run through what we just did:
   buzzing
 - Sets the PWM duty cycle to 0 -- stops the buzzer producing any noise (as it
   is once again enabled 0% of the time)
+- Deinitialises the buzzer -- this should be done once the buzzer is not being
+  used, and the buzzer reinitialised (via ``buzzer = machine.PWM(buzzer_pin)``)
+  if we want to use it again. **NOTE**: If we don't do this and then we change
+  the ``buzzer_pin`` variable in any way (such as running the above
+  code again, re-setting ``buzzer_pin``), the buzzer will stop working and we
+  will be required to unplug and re-plug the board to get it to work again!
 
 A couple of the numbers in here may seem a tad arbitrary, so lets explain them
 a bit better.
@@ -140,7 +147,8 @@ Now lets create a function that will allow us to play a song by passing it a
 buzzer object, a list of notes, the delay between each note, and an optional
 duty cycle to use when playing a note::
 
-    def play(buz, notes, delay, active_duty=50):
+    def play(buz_pin, notes, delay, active_duty=50):
+        buz = machine.PWM(buz_pin)
         for note in notes:
             if note == 0:  # Special case for silence
                 buz.duty(0)
@@ -149,6 +157,7 @@ duty cycle to use when playing a note::
                 buz.duty(active_duty)
             time.sleep(delay)
         buz.duty(0)
+        buz.deinit()
 
 To put it into action, lets create a song by defining a list of notes, and then
 ``play()`` it::
@@ -165,7 +174,7 @@ To put it into action, lets create a song by defining a list of notes, and then
          G6, E7,  0, G7, A7,  0, F7, G7,
           0, E7,  0, C7, D7, B6,  0,  0,
     ]
-    play(buzzer, song, 0.15)
+    play(buzzer_pin, song, 0.15)
 
 With any luck we should have heard a recognisable little tune! We've now set
 up a framework to allow us to play arbitrary songs -- neat!
