@@ -14,12 +14,12 @@ learning.
 ## Installation
 
 [Sphinx](https://www.sphinx-doc.org) is used to build the documentation. To
-install using `virtualenv`:
+install using `venv`:
 
 ```bash
-> python -m venv env
-> source env/bin/activate
-> pip install -r requirements.txt
+python -m venv env
+source env/bin/activate
+pip install -r requirements.txt
 ```
 
 ## Building
