@@ -1,0 +1,6 @@
+[submodule "python/tm1640"]
+	path = python/tm1640
+	url = https://github.com/mattytrentini/micropython-tm1640.git
+[submodule "python/max7219"]
+	path = python/max7219
+	url = https://github.com/mattytrentini/micropython-max7219.git
