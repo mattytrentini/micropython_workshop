@@ -1,5 +1,6 @@
 BIN ?= esp32-idf3-20190529-v1.11.bin
 PORT ?= /dev/ttyS3
+BAUD ?= 460800
 
 .PHONY: deploy reqs flash erase copy test clean
 
@@ -17,10 +18,10 @@ reqs:
 
 flash:
 	test -f $(BIN) || wget https://micropython.org/resources/firmware/$(BIN)
-	python3 -m esptool -p $(PORT) write_flash -z 0x1000 $(BIN)
+	python3 -m esptool -p $(PORT) -b $(BAUD) write_flash -z 0x1000 $(BIN)
 
 erase:
-	python3 -m esptool -p $(PORT) erase_flash
+	python3 -m esptool -p $(PORT) -b $(BAUD) erase_flash
 
 copy:
 	rshell -p $(PORT) mkdir /pyboard/lib
