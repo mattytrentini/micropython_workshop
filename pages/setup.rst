@@ -16,6 +16,16 @@ To participate in the workshop, you will need the following:
     USB to Serial chip. MacOS El Capitan may require `disabling kext signing`_
     to install it.
 
+  * If your OS is Linux-based then, depending on the distribution, you may need
+    to configure a *user* to have *permission* to access the serial point. This
+    is usually performed by adding a user to a *group* that controls access to
+    the serial ports; on many distributions this is the *dialout* group::
+
+      sudo adduser [user] dialout
+
+    Replace ``[user]`` with the name of the user that should have access to the
+    serial port. It's typically necessary to log out and then back in again.
+
   * `Mu`_ installed on your laptop. This will be used for writing code,
     transferring code to the device, and even running an interactive terminal
     directly on the microcontroller.
