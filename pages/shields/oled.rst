@@ -43,7 +43,7 @@ into the microcontroller. Take care with orientation:
 .. figure:: /images/oled_shield_connected.jpg
    :width: 270
 
-   OLED Shield, plugged in correctly *[Update picture!]*
+   OLED Shield, plugged in correctly
 
 Techy details, I squared C?
 ===========================
@@ -76,10 +76,10 @@ but it's critical to configure it appropriately.
 It's worth noting that the display's 'origin' - where ``x`` and ``y`` are
 both zero - is in the *top left*.:
 
-.. figure:: /images/oled_shield_top.png
+.. figure:: /images/oled_shield_resolution.png
    :width: 270
 
-   OLED Shield, annotated with row and column numbering *[Update picture!]*
+   OLED Shield, annotated with row and column numbering
 
 Now we can draw things!::
 
