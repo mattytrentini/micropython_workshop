@@ -17,7 +17,7 @@ To participate in the workshop, you will need the following:
     to install it.
 
   * If your OS is Linux-based then, depending on the distribution, you may need
-    to configure a *user* to have *permission* to access the serial point. This
+    to configure a *user* to have *permission* to access the serial port. This
     is usually performed by adding a user to a *group* that controls access to
     the serial ports; on many distributions this is the *dialout* group::
 
