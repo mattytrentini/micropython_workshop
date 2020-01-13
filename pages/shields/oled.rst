@@ -43,7 +43,7 @@ into the microcontroller. Take care with orientation:
 .. figure:: /images/oled_shield_connected.jpg
    :width: 270
 
-   OLED Shield, plugged in correctly *[Update picture!]*
+   OLED Shield, plugged in correctly
 
 Techy details, I squared C?
 ===========================
@@ -76,29 +76,32 @@ but it's critical to configure it appropriately.
 It's worth noting that the display's 'origin' - where ``x`` and ``y`` are
 both zero - is in the *top left*.:
 
-.. figure:: /images/oled_shield_top.png
+.. figure:: /images/oled_shield_resolution.png
    :width: 270
 
-   OLED Shield, annotated with row and column numbering *[Update picture!]*
+   OLED Shield, annotated with row and column numbering
 
 Now we can draw things!::
 
+    # Text is easy!
     oled.text('Hello,', 0, 0, 1)
     oled.text('World!', 0, 10, 1)
 
-    oled.pixel(25, 25, 1)
-    oled.hline(0, 10, 32, 1)
-    oled.vline(0, 10, 20, 1)
-    oled.line(0, 0, 64, 48, 1)
+    # Draw a triangle and it's centroid
+    v1, v2, v3 = (2, 24), (2, 46), (60, 46)
+    oled.vline(v1[0], v1[1], v2[1] - v1[1], 1)
+    oled.hline(v2[0], v2[1], v3[0] - v2[0], 1)
+    oled.line(v1[0], v1[1], v3[0], v3[1], 1)
+    oled.pixel((v1[0] + v2[0] + v3[0]) // 3, (v1[1] + v2[1] + v3[1]) // 3, 1)
 
     oled.show()
 
-*[Update example code to be more interesting]*:
+:
 
-.. figure:: /images/oled_shield_top.png
+.. figure:: /images/oled_shield_draw_things.jpg
    :width: 270
 
-   We can draw! *[Update picture!]*
+   We can draw!
 
 The drawing commands are defined in `FrameBuffer`_ which the SSD1306 driver
 uses internally. ``text``, ``pixel``, ``hline``, ``vline`` and ``line`` are
@@ -118,10 +121,10 @@ Exercise 1: Spirals for days
 
 Render a square-edged spiral using ``hline`` and ``vline``:
 
-.. figure:: /images/oled_shield_top.png
+.. figure:: /images/oled_shield_spiral.jpg
    :width: 270
 
-   Spiral *[Update picture!]*
+   Spiral
 
 Exercise 2: Animate the spiral
 ------------------------------
