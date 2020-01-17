@@ -13,7 +13,7 @@ To participate in the workshop, you will need the following:
       USB-C to Micro B cable or a USB-C to USB Type A socket dongle.
 
   * If it's Windows or Mac OS, make sure to install `drivers`_ for the CH340
-    USB to Serial chip. MacOS El Capitan may require `disabling kext signing`_
+    USB to Serial chip. MacOS El Capitan may require disabling "kext signing"
     to install it.
 
   * If your OS is Linux-based then, depending on the distribution, you may need
@@ -46,7 +46,6 @@ To participate in the workshop, you will need the following:
         python run.py
 
 .. _drivers: https://wiki.wemos.cc/downloads
-.. _disabling kext signing: http://farazmemon.com/2016/02/07/flashing-latest-firmware-on-nodemcu-devkit-v0-9-osx-el-capitan/
 .. _Mu: https://codewith.mu
 .. _build from source: https://mu.readthedocs.io/en/latest/#quickstart
 
